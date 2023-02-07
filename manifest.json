@@ -1,0 +1,26 @@
+{
+    "dir": "ltr",
+    "scope": "/",
+    "name": "琴梨梨",
+    "short_name": "琴梨梨",
+    "icons": [
+        {
+            "src": "icon.webp",
+            "sizes": "1280x1280",
+            "type": "image/webp",
+            "purpose": "any"
+        }
+    ],
+    "launch_handler": {
+        "route_to": "existing-client",
+        "navigate_existing_client": "always"
+    },
+    "start_url": "/",
+    "display": "standalone",
+    "display_override": [],
+    "id": "/",
+    "orientation": "any",
+    "background_color": "#bfee6f",
+    "theme_color": "#bfee6f",
+    "description": "琴梨梨的全新主页！"
+}
