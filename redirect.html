@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="琴梨梨的官方小站，集成网址导航、软件下载、公告动态等" />
+    <meta name="robots" content="noindex">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="canonical" href="https://qinlili.bid/redirect.html" />
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#bfee6f">
+    <title>跳转中...</title>
+</head>
+
+<body>
+    <div style="text-align:center;padding-top:20vh;">
+        <img src=" /static/img/loading.svg">
+    </div>
+    <div style="text-align:center;position:fixed;bottom:10%;width:100%">
+        <p style="font-size:30px">跳转中...</p>
+    </div>
+    <script>
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        const target = getQueryString("target");
+        //location.replace(target);
+    </script>
+</body>
+
+</html>

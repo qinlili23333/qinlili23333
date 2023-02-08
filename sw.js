@@ -54,7 +54,7 @@ self.addEventListener('fetch', event => {
                         console.log("failed to fetch :" + event.request.url)
                         console.log(error);
                         if (event.request.url.substring(event.request.url.lastIndexOf("/")).indexOf(".") == -1 && !event.request.url.endsWith("/")) {
-                            return cache.match("/error").then(response => {
+                            return cache.match("/static/error").then(response => {
                                 return response || new Response("加载出错了！");
                             })
                         } else {
@@ -86,8 +86,8 @@ self.addEventListener('install', e => {
                 })
             })
         };
-        return fetch("/error").then(response => {
-            cache.put("/error", new Response(response.body, { status: 200, header: { "content-type": "text/html; charset=utf-8" } }));
+        return fetch("/static/error").then(response => {
+            cache.put("/static/error", new Response(response.body, { status: 200, header: { "content-type": "text/html; charset=utf-8" } }));
             return true;
         })
     }

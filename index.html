@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="琴梨梨的官方小站，集成网址导航、软件下载、公告动态等" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="canonical" href="https://qinlili.bid/" />
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#bfee6f">
+    <title>琴梨梨 - 就要做极致</title>
+    <link rel="stylesheet" href="/static/css/public.css">
+    <style>
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate3d(-3px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(+6px, 0, 0);
+            }
+
+            30%,
+            70% {
+                transform: translate3d(-12px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(+12px, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(-12px, 0, 0);
+            }
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .statusBar {
+            height: 48px;
+            display: flex;
+        }
+
+        .statusIcon {
+            display: flex;
+            margin: 2px;
+            height: 44px;
+            width: 44px;
+            position: relative;
+        }
+
+        #loadingIcon {
+            position: fixed;
+            height: 44px;
+            width: 44px;
+        }
+
+        #custonIcon {
+            position: absolute;
+            margin: 6px;
+            height: 32px;
+            width: 32px;
+        }
+
+        .customText {
+            display: flex;
+            margin-top: 8px;
+            height: 28px;
+            opacity: 0;
+            padding-left: 0px;
+            position: absolute;
+            transition: all 0.2s;
+        }
+
+        .customText:hover {
+            opacity: 1;
+            padding-left: 48px;
+        }
+
+        #customText {
+            padding: 4px;
+            font-size: 1em;
+            border-radius: 2px;
+            height: 28px;
+            white-space: nowrap;
+            background-color: rgba(100, 100, 100, 0.75);
+            color: white;
+        }
+
+        .logo {
+            padding-top: 48px;
+            width: 75vw;
+            max-width: 500px;
+            padding-bottom: 20px;
+        }
+
+        .slogan {
+            font-size: 2em;
+            color: rgb(50, 150, 50)
+        }
+
+        .navBar {
+            position: fixed;
+            bottom: 0px;
+            height: 48px;
+            left: -1px;
+            right: -1px;
+            width: auto;
+            background-image: linear-gradient(transparent, transparent, rgba(150, 150, 150, 0.5));
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .navItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-left: 1px rgba(150, 150, 150, 0.5) solid;
+            border-right: 1px rgba(150, 150, 150, 0.5) solid;
+            flex: 1;
+            min-width: 50px;
+            background-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .navItem:hover {
+            background-color: rgba(150, 255, 150, 0.5);
+        }
+
+        .navIcon {
+            height: 32px;
+            width: 32px;
+            margin: 8px;
+        }
+
+        .navText {
+            font-size: 1.5em;
+            font-weight: bolder;
+            color: rgba(50, 50, 50, 1);
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+
+        .float {
+            z-index: 10;
+            width: 80%;
+            height: 80%;
+            position: fixed;
+            top: 10vh;
+            left: 10%;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="statusBar">
+        <div class="statusIcon">
+            <img id="loadingIcon" src="/static/img/loading.svg">
+            <img id="custonIcon" src="/static/img/icon/setting.svg">
+            <div class="customText">
+                <span id="customText">正在加载...</span>
+            </div>
+        </div>
+        <div class="rightIcons">
+
+        </div>
+    </div>
+    <img class="logo" src="/static/img/logo.png">
+    <H1 class="slogan">就要做极致</H1>
+    <div class="navBar">
+        <a class="navItem" href="/navigate">
+            <img class="navIcon" src="/static/img/icon/menu.svg">
+            <span class="navText">导航</span>
+        </a>
+        <a class="navItem" href="javascript:Module.announce.show();">
+            <img class="navIcon" src="/static/img/icon/announce.svg">
+            <span class="navText">公告</span>
+        </a>
+        <a class="navItem" href="/redirect.html?target=https://github.com/qinlili23333/qinlili23333/issues"
+            target="_blank">
+            <img class="navIcon" src="/static/img/icon/bug.svg">
+            <span class="navText">反馈</span>
+        </a>
+    </div>
+    <script>
+        const Module = {
+            announce: {
+                show: () => {
+                    if (document.getElementById("announce")) {
+                        document.getElementById("announce").style.animation = "shake 200ms ease-in-out"
+                        setTimeout(() => { document.getElementById("announce").style.animation = "" }, 200)
+                    } else {
+                        let showDiv = document.createElement("div");
+                        showDiv.className = "float";
+                        showDiv.id = "announce";
+                        document.body.appendChild(showDiv);
+                        let loading = document.createElement("img");
+                        loading.src = "/static/img/loading.svg";
+                        loading.style = "width:48px;height:48px;"
+                        showDiv.appendChild(loading);
+                        fetch("/data/announce.txt?ForceNoCache=1").then(response => response.text()).then(text => showDiv.innerHTML = text).catch(err => {
+                            alert("加载失败:" + err.message);
+                            Module.announce.hide();
+                        });
+                    }
+                },
+                hide: () => {
+                    document.body.removeChild(document.getElementById("announce"));
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

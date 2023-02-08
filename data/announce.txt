@@ -1,0 +1,11 @@
+<div style="display:flex;flex-direction:column;justify-content: space-between;height:100%;width:100%;">
+<ol start="0" style="padding-left: 2em;">
+<li>琴梨梨的城通网盘下载密码如果没有特殊说明就是后宫群号547873715！<br>
+推荐使用<a href="https://ctfile.qinlili.bid/" rel="nofollow">链接解析器</a>直接解析直连地址</li>
+<li>琴梨梨在微博和酷安没有发布内容的账号，如果你看到了，那一定是假冒的</li>
+</ol>
+
+<div style="text-align:center;">
+<span style="background-color:rgba(150,250,150,0.7);border-radius:4px;padding:8px;margin:16px;display:block;" onclick="Module.announce.hide();">朕已阅</span>
+</div>
+</div>
