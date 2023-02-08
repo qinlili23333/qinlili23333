@@ -99,7 +99,7 @@
         }
 
         .logo {
-            padding-top: 48px;
+            padding-top: 16px;
             width: 75vw;
             max-width: 500px;
             padding-bottom: 20px;
@@ -160,6 +160,7 @@
         }
 
         .float {
+            overflow: scroll;
             z-index: 10;
             width: 80%;
             height: 80%;
@@ -178,7 +179,7 @@
     <div class="statusBar">
         <div class="statusIcon">
             <img id="loadingIcon" src="/static/img/loading.svg">
-            <img id="custonIcon" src="/static/img/icon/setting.svg">
+            <img id="custonIcon" src="/static/img/empty.svg" alt>
             <div class="customText">
                 <span id="customText">正在加载...</span>
             </div>
@@ -234,7 +235,12 @@
                     document.body.removeChild(document.getElementById("announce"));
                 }
             }
-        }
+        };
+        const status = (icon, text, loading){
+            document.getElementById("custonIcon").src = icon ? icon : "/static/img/empty.svg";
+            document.getElementById("customText").innerText = text ? text : ">_<";
+            document.getElementById("loadingIcon").style.display = loading ? "block" : "none";
+        };
     </script>
 </body>
 
