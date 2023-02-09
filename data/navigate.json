@@ -1,0 +1,41 @@
+{
+    "version": "20230209",
+    "list": [
+        {
+            "name": "网页轻应用",
+            "icon": "/static/img/icon/web.svg",
+            "sublist": [
+                {
+                    "name": "城通网盘解析",
+                    "description": "解析直连下载地址",
+                    "icon": "https://ctfile.qinlili.bid/icon.webp",
+                    "url": "https://ctfile.qinlili.bid/",
+                    "external": true
+                },
+                {
+                    "name": "545在线",
+                    "description": "塔宝的在线溜冰场",
+                    "icon": "https://545.qinlili.bid/icon.webp",
+                    "url": "https://545.qinlili.bid/",
+                    "external": true
+                },
+            ]
+        },
+        {
+            "name": "Android软件",
+            "icon": "/static/img/icon/android.svg",
+        },
+        {
+            "name": "Windows软件",
+            "icon": "/static/img/icon/windows.svg",
+        },
+        {
+            "name": "游戏相关 - GlacierLab",
+            "icon": "/static/img/icon/game.svg",
+        },
+        {
+            "name": "浏览器脚本",
+            "icon": "/static/img/icon/chrome.svg",
+        }
+    ]
+}

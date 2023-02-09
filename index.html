@@ -185,7 +185,6 @@
             </div>
         </div>
         <div class="rightIcons">
-
         </div>
     </div>
     <img class="logo" src="/static/img/logo.png">
@@ -234,9 +233,38 @@
                 hide: () => {
                     document.body.removeChild(document.getElementById("announce"));
                 }
+            },
+            pwa: {
+                install: () => {
+                    if (navigator.serviceWorker) {
+                        status("/static/img/icon/install.svg", "正在安装...", true);
+                        navigator.serviceWorker.register("/sw.js").then(registration => {
+                            status();
+                        })
+                    } else {
+                        alert("浏览器不支持");
+                    }
+                },
+                uninstall: () => {
+                    if (navigator.serviceWorker) {
+                        status("/static/img/icon/uninstall.svg", "正在卸载...", true);
+                        navigator.serviceWorker.getRegistrations().then(registrations => {
+                            for (let registration of registrations) {
+                                registration.unregister();
+                            }
+                            status();
+                        })
+                    }
+                },
+                checkUpdate: () => {
+                    if (navigator.serviceWorker) {
+                        status("/static/img/icon/update.svg", "正在检查更新...", true);
+                        //比对版本号
+                    }
+                }
             }
         };
-        const status = (icon, text, loading){
+        const status = (icon, text, loading) => {
             document.getElementById("custonIcon").src = icon ? icon : "/static/img/empty.svg";
             document.getElementById("customText").innerText = text ? text : ">_<";
             document.getElementById("loadingIcon").style.display = loading ? "block" : "none";

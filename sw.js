@@ -1,5 +1,5 @@
 var APP_PREFIX = '琴梨梨'
-var VERSION = '0.0.0'
+var VERSION = '0.0.1.20230209'
 var VERSION_AZUSA_PATCH_USE = 'ForceUpdate'
 var AZUSA_PATCH_SKIP_LIST = [];
 var CACHE_NAME = APP_PREFIX + VERSION;
@@ -101,6 +101,7 @@ self.addEventListener('activate', e => {
             })
             cacheWhitelist.push(CACHE_NAME);
             cacheWhitelist.push("StaticCache");
+            cacheWhitelist.push("SiteStaticCache");
             return Promise.all(keyList.map((key, i) => {
                 if (cacheWhitelist.indexOf(key) === -1) {
                     console.log('deleting cache : ' + keyList[i])
