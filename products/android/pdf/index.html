@@ -93,6 +93,9 @@
         <img src="/static/img/icon/install.svg" style="width: 32px;height: 32px;">
         <H3 style="line-height:32px;color:black;">立即安装</H3>
     </a>
+    <br>
+    <br>
+    <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
     <script>
         const humanFileSize = (bytes, si = false, dp = 3) => {
             const thresh = si ? 1000 : 1024;
@@ -130,6 +133,7 @@
             status("", null)
         }).catch(err => {
             console.log(err);
+            status("读取版本失败", null)
         })
     </script>
 </body>
