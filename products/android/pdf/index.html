@@ -66,11 +66,12 @@
             box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
             justify-content: space-between;
         }
+
+        .content {
+            padding-left: 8px;
+            padding-left: 8px;
+        }
     </style>
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-1806614386308377?ers=1"
-        nonce="Kx6krew_OkZydM0wSsg-vg"></script>
-    <script
-        nonce="Kx6krew_OkZydM0wSsg-vg">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 </head>
 
 <body>
@@ -85,18 +86,37 @@
             <img id="loading" src="/static/img/loading.svg">
         </div>
     </div>
-    <H1>KiyomiPDF</H1>
-    <H4>免费干净好用的安卓PDF阅读器，由琴梨梨基于PDF.js打造</H4>
-    <H5 id="info">当前版本：---&nbsp;&nbsp;&nbsp;安装包体积：---</H5>
-    <br>
-    <a id="download">
-        <img src="/static/img/icon/install.svg" style="width: 32px;height: 32px;">
-        <H3 style="line-height:32px;color:black;">立即安装</H3>
-    </a>
-    <br>
-    <br>
-    <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
+    <div class="content">
+        <H1>KiyomiPDF</H1>
+        <H4>免费干净好用的安卓PDF阅读器，由琴梨梨基于PDF.js打造</H4>
+        <H5 id="info">当前版本：---&nbsp;&nbsp;&nbsp;安装包体积：---</H5>
+        <br>
+        <a id="download">
+            <img src="/static/img/icon/install.svg" style="width: 32px;height: 32px;">
+            <H3 style="line-height:32px;color:black;">立即安装</H3>
+        </a>
+        <br>
+        <br>
+        <H5>---↓详细了解更多↓---</H5>
+        <H4>KiyomiPDF有哪些优点？</H4>
+        <p>-完全的纯白/纯黑主题，更适合OLED屏幕，更简洁<br>
+            -同时打开无限数量的文件<br>
+            -良好的打印支持<br>
+            -所有功能都不需要联网</p>
+        <H4>为什么开发了KiyomiPDF？</H4>
+        <p>本项目源自小轻Kiyomi，最早用于查看校历，后来小轻因为琴梨梨离开南中医而弃坑，PDF阅读器被独立出来继续维护</p>
+        <H4>这个项目靠什么盈利？</H4>
+        <p>下面的广告</p>
+        <!-- KiyomiPDF -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1806614386308377"
+            data-ad-slot="2845182816" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
+    </div>
     <script>
+        const sleep = delay => new Promise((resolve) => setTimeout(resolve, delay));
         const humanFileSize = (bytes, si = false, dp = 3) => {
             const thresh = si ? 1000 : 1024;
 
@@ -135,7 +155,32 @@
             console.log(err);
             status("读取版本失败", null)
         })
+        const adUnload = () => {
+            if (!window.adblock) {
+                window.adblock = true;
+                alert("Google广告加载失败，KiyomiPDF免费纯净的支撑就是下载页面的广告，琴梨梨不是慈善家，需要收入来平衡支出，若实在不希望看到广告，请考虑捐赠。点击确定将跳转到爱发电。");
+                location.href = "https://afdian.net/a/qinliliAPP";
+            }
+        }
+        //Anti uBlock Origin
+        (async () => {
+            await sleep(2000);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.status === 200) {
+                    if (!this.responseURL.startsWith("https")) {
+                        adUnload();
+                    }
+                }
+
+            };
+            xmlhttp.open("HEAD", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", true);
+            xmlhttp.send();
+        })()
+
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1806614386308377"
+        crossorigin="anonymous" onerror="adUnload()"></script>
 </body>
 
 </html>
