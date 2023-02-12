@@ -16,6 +16,9 @@
     <style>
         body {
             text-align: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            overflow-y: overlay;
         }
 
         .navbar {
@@ -80,6 +83,12 @@
             <a class="navicon" href="/" title="琴梨梨的主页">
                 <img class="navicon-img" src="/static/img/icon/home.svg">
             </a>
+            <a class="navicon" href="https://github.com/qinlili23333/KiyomiPDF" title="Github仓库">
+                <img class="navicon-img" src="/static/img/icon/github.svg">
+            </a>
+            <div class="navicon" id="share" style="display:none;" aria-label="分享">
+                <img class="navicon-img" src="/static/img/icon/share.svg">
+            </div>
         </div>
         <H3 id="status" style="line-height: 32px;">正在获取版本信息...</H3>
         <div style="display:flex;">
@@ -116,6 +125,16 @@
         <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
     </div>
     <script>
+        if (navigator.share) {
+            document.getElementById("share").style.display = "inline";
+            document.getElementById("share").addEventListener("click", async () => {
+                navigator.share({
+                    title: "KiyomiPDF",
+                    text: "免费轻量好用的安卓PDF阅读器",
+                    url: location.href
+                });
+            });
+        }
         const sleep = delay => new Promise((resolve) => setTimeout(resolve, delay));
         const humanFileSize = (bytes, si = false, dp = 3) => {
             const thresh = si ? 1000 : 1024;
