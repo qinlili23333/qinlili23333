@@ -62,7 +62,7 @@
         #download {
             display: none;
             height: 48px;
-            width: 128px;
+            width: 160px;
             padding: 8px;
             background-color: greenyellow;
             border-radius: 4px;
@@ -73,6 +73,12 @@
         .content {
             padding-left: 8px;
             padding-left: 8px;
+        }
+
+        #qrcode {
+            width: 128px;
+            height: 128px;
+            margin: auto;
         }
     </style>
 </head>
@@ -90,21 +96,25 @@
                 <img class="navicon-img" src="/static/img/icon/share.svg">
             </div>
         </div>
-        <H3 id="status" style="line-height: 32px;">正在获取版本信息...</H3>
+        <H3 id="status" style="line-height: 32px;text-overflow: ellipsis;flex-shrink: 0;">正在获取版本信息...</H3>
         <div style="display:flex;">
             <img id="loading" src="/static/img/loading.svg">
         </div>
     </div>
     <div class="content">
         <H1>KiyomiPDF</H1>
-        <H4>免费干净好用的安卓PDF阅读器，由琴梨梨基于PDF.js打造</H4>
+        <H4>免费干净好用的安卓PDF阅读器，由琴梨梨基于<a href="https://mozilla.github.io/pdf.js/" target="_blank">PDF.js</a>打造</H4>
         <H5 id="info">当前版本：---&nbsp;&nbsp;&nbsp;安装包体积：---</H5>
+        <br>
         <br>
         <a id="download">
             <img src="/static/img/icon/install.svg" style="width: 32px;height: 32px;">
-            <H3 style="line-height:32px;color:black;">立即安装</H3>
+            <H3 style="line-height:32px;color:black;width:100%;" id="dlText">立即安装</H3>
         </a>
         <br>
+        <br>
+        <div id="qrcode"></div>
+        <span id="scanText" style="display: none;">安卓设备扫码直接安装</span>
         <br>
         <H5>---↓详细了解更多↓---</H5>
         <H4>KiyomiPDF有哪些优点？</H4>
@@ -116,14 +126,26 @@
         <p>本项目源自小轻Kiyomi，最早用于查看校历，后来小轻因为琴梨梨离开南中医而弃坑，PDF阅读器被独立出来继续维护</p>
         <H4>这个项目靠什么盈利？</H4>
         <p>下面的广告</p>
+        <hr>
         <!-- KiyomiPDF -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1806614386308377"
             data-ad-slot="2845182816" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-        <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
+        <hr>
+        <span>
+            本页面由以下开源项目驱动:
+            <a href="https://github.com/KeeeX/qrcodejs" target="_blank">KeeeX/qrcodejs</a>
+        </span>
+        <br>
+        <span>
+            <a href="https://qinlili.bid">琴梨梨</a> |
+            <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
+        </span>
     </div>
+    <script src="/static/ext_js/qrcode.min.js">
+    </script>
     <script>
         if (navigator.share) {
             document.getElementById("share").style.display = "inline";
@@ -169,7 +191,25 @@
             document.getElementById("download").href = current.assets[0].browser_download_url;
             document.getElementById("download").download = "KiyomiPDF_LatestRelease.apk";
             document.getElementById("download").style.display = "inline-flex";
-            status("", null)
+            status("", null);
+            //Detect Android
+            let isAndroid = false;
+            if (navigator.userAgentData && navigator.userAgentData.platform == "Android") {
+                isAndroid = true;
+            } else {
+                if (navigator.userAgent.indexOf("Android") != -1) {
+                    isAndroid = true;
+                };
+            };
+            if (!isAndroid) {
+                document.getElementById("dlText").innerText = "下载安装包";
+                new QRCode(document.getElementById("qrcode"), {
+                    text: current.assets[0].browser_download_url,
+                    width: 128,
+                    height: 128,
+                });
+                document.getElementById("scanText").style.display = "inline";
+            };
         }).catch(err => {
             console.log(err);
             status("读取版本失败", null)
