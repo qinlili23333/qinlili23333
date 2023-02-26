@@ -2,28 +2,113 @@
     "version": "20230209",
     "list": [
         {
+            "name": "平台账号",
+            "icon": "/static/img/icon/account.svg",
+            "sublist": [
+                {
+                    "name": "知乎",
+                    "description": "@琴梨梨OvO",
+                    "icon": "/static/img/ext_icon/zhihu.webp",
+                    "url": "https://www.zhihu.com/people/qinlili233",
+                    "external": true
+                },
+                {
+                    "name": "Bilibili",
+                    "description": "@琴梨梨OvO",
+                    "icon": "/static/img/ext_icon/bili.webp",
+                    "url": "https://space.bilibili.com/3884200",
+                    "external": true
+                },
+                {
+                    "name": "奶牛关",
+                    "description": "@琴梨梨",
+                    "icon": "/static/img/ext_icon/cowlevel.webp",
+                    "url": "https://cowlevel.net/people/qinlili",
+                    "external": true
+                },
+                {
+                    "name": "Steam",
+                    "description": "@❤杨枝甘露OvO",
+                    "icon": "/static/img/ext_icon/steam.webp",
+                    "url": "https://steamcommunity.com/id/QINLILI/",
+                    "external": true
+                },
+                {
+                    "name": "Twitter",
+                    "description": "(拟态虫)@帅比笙歌超可爱OvO",
+                    "icon": "/static/img/ext_icon/twitter.webp",
+                    "url": "https://twitter.com/real_qinlili",
+                    "external": true
+                },
+                {
+                    "name": "Facebook",
+                    "description": "@琴梨梨",
+                    "icon": "/static/img/ext_icon/facebook.webp",
+                    "url": "https://www.facebook.com/qinlili233",
+                    "external": true
+                },
+                {
+                    "name": "Github",
+                    "description": "@qinlili23333",
+                    "icon": "/static/img/ext_icon/github.webp",
+                    "url": "https://github.com/qinlili23333",
+                    "external": true
+                },
+                {
+                    "name": "爱发电",
+                    "description": "@琴梨梨",
+                    "icon": "/static/img/ext_icon/afdian.webp",
+                    "url": "https://afdian.net/a/qinliliAPP",
+                    "external": true
+                },
+                {
+                    "name": "YouTube",
+                    "description": "@qinlili233",
+                    "icon": "/static/img/ext_icon/youtube.webp",
+                    "url": "https://www.youtube.com/@qinlili233",
+                    "external": true
+                }
+            ]
+        },
+        {
             "name": "网页轻应用",
             "icon": "/static/img/icon/web.svg",
             "sublist": [
                 {
                     "name": "城通网盘解析",
                     "description": "解析直连下载地址",
-                    "icon": "https://ctfile.qinlili.bid/icon.webp",
+                    "icon": "/static/img/ext_icon/ctfile.webp",
                     "url": "https://ctfile.qinlili.bid/",
                     "external": true
                 },
                 {
                     "name": "545在线",
                     "description": "塔宝的在线溜冰场",
-                    "icon": "https://545.qinlili.bid/icon.webp",
+                    "icon": "/static/img/ext_icon/545.webp",
                     "url": "https://545.qinlili.bid/",
                     "external": true
                 },
+                {
+                    "name": "云酱游戏导航",
+                    "description": "简单干净的游戏导航站",
+                    "icon": "/static/img/ext_icon/kumo.webp",
+                    "url": "https://kumo.qinlili.bid/",
+                    "external": true
+                }
             ]
         },
         {
             "name": "Android软件",
             "icon": "/static/img/icon/android.svg",
+            "sublist": [
+                {
+                    "name": "KiyomiPDF",
+                    "description": "轻量免费纯净的PDF阅读器",
+                    "icon": "/static/img/icon/pdf.svg",
+                    "url": "/products/android/pdf/",
+                    "external": false
+                }
+            ]
         },
         {
             "name": "Windows软件",
