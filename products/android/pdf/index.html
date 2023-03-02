@@ -86,6 +86,9 @@
 <body>
     <div class="navbar">
         <div style="display:flex;">
+            <div class="navicon" id="back" style="display:none;" aria-label="返回">
+                <img class="navicon-img" src="/static/img/icon/left.svg">
+            </div>
             <a class="navicon" href="/" title="琴梨梨的主页">
                 <img class="navicon-img" src="/static/img/icon/home.svg">
             </a>
@@ -147,6 +150,12 @@
     <script src="/static/ext_js/qrcode.min.js">
     </script>
     <script>
+        if (document.referrer.indexOf(location.origin) == 0) {
+            document.getElementById("back").style.display = "inline";
+            document.getElementById("back").addEventListener("click", () => {
+                history.back();
+            });
+        }
         if (navigator.share) {
             document.getElementById("share").style.display = "inline";
             document.getElementById("share").addEventListener("click", async () => {
@@ -217,8 +226,7 @@
         const adUnload = () => {
             if (!window.adblock) {
                 window.adblock = true;
-                alert("Google广告加载失败，KiyomiPDF免费纯净的支撑就是下载页面的广告，琴梨梨不是慈善家，需要收入来平衡支出，若实在不希望看到广告，请考虑捐赠。点击确定将跳转到爱发电。");
-                location.href = "https://afdian.net/a/qinliliAPP";
+                alert("Google广告加载失败，KiyomiPDF免费纯净的支撑就是下载页面的广告，琴梨梨不是慈善家，需要收入来平衡支出。");
             }
         }
         //Anti uBlock Origin

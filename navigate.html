@@ -19,11 +19,166 @@
             overflow: hidden;
             text-align: center;
         }
+
+        .top {
+            height: 56px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .navi {
+            width: 100vw;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .navicon {
+            display: inline;
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            transition: background-color 0.2s;
+            background-color: transparent;
+        }
+
+        .navicon:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .navicon:active {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .navicon-img {
+            width: 100%;
+            height: 100%
+        }
+
+        .noti {
+            width: 100vw;
+            height: 24px;
+            display: flex;
+            background-color: rgb(236, 230, 255);
+        }
+
+        #notiIcon {
+            width: 24px;
+            height: 24px;
+            margin-left: 4px;
+            margin-right: 4px;
+            padding: 2px;
+        }
+
+        #notiText {
+            font-size: 0.9em;
+            line-height: 24px;
+            color: #333;
+        }
+
+        .search {
+            position: relative;
+            min-width: 100px;
+            width: 100%;
+        }
+
+        #searchIcon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+            margin: 4px;
+            opacity: 0.5;
+            border-radius: 0px;
+            background-color: transparent;
+            transition: all 0.2s;
+        }
+
+        #searchIcon:hover {
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.15);
+            opacity: 0.75;
+        }
+
+        #searchIcon:active {
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+        }
+
+        input {
+            background-color: transparent;
+            position: absolute;
+            padding-right: 40px;
+            height: 26px;
+            width: calc(100% - 16px);
+            margin-top: 2px;
+            font-size: 1.1em;
+            margin-left: 8px;
+            margin-right: 8px;
+            border: none;
+            border-bottom: 1px solid #777777;
+            outline: none;
+        }
+
+        input:focus-visible {
+            height: 27px !important;
+            border-bottom: 2px solid #35f39a !important;
+        }
+
+        input:hover {
+            height: 26.5px;
+            border-bottom: 1.5px solid #333333;
+        }
+
+        input:active {
+            height: 27px !important;
+            border-bottom: 2px solid #35f39a !important;
+        }
+
+        #search {
+            left: 0px;
+            top: 0px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="top">
+        <div class="navi">
+            <div class="leftNavi" style="display:flex;">
+                <div class="navicon" id="backBtn" style="display:none;" aria-label="返回" role="button" alt="返回">
+                    <img class="navicon-img" src="/static/img/icon/left.svg">
+                </div>
+            </div>
+            <div class="search" style="display:flex;">
+                <input role="textbox" tabindex="0" id="search" name="搜索" placeholder="搜索">
+                <img id="searchIcon" src="/static/img/icon/search.svg">
+            </div>
+            <div class="rightNavi" style="display:flex;">
+                <div class="navicon" id="settingBtn" aria-label="设置" role="button" alt="设置">
+                    <img class="navicon-img" src="/static/img/icon/setting.svg">
+                </div>
+            </div>
+        </div>
+        <div class="noti">
+            <img id="notiIcon" src="/static/img/loading.svg">
+            <span id="notiText">正在加载导航...</span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="side"></div>
+        <div class="list"></div>
+    </div>
     <script>
+        if (document.referrer.indexOf(location.origin) == 0) {
+            document.getElementById("backBtn").style.display = "inline";
+            document.getElementById("backBtn").addEventListener("click", () => {
+                history.back();
+            });
+        }
     </script>
 </body>
 
