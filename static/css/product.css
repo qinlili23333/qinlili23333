@@ -15,6 +15,7 @@ body {
 }
 
 .navicon {
+    cursor: pointer;
     border-radius: 16px;
     display: inline;
     width: 32px;
