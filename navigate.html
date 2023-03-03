@@ -22,7 +22,7 @@
 
         .top {
             height: 56px;
-            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
         }
 
         .navi {
@@ -34,19 +34,22 @@
         }
 
         .navicon {
+            border-radius: 16px;
             display: inline;
             width: 32px;
             height: 32px;
             padding: 4px;
-            transition: background-color 0.2s;
+            transition: all 0.3s;
             background-color: transparent;
         }
 
         .navicon:hover {
+            border-radius: 0px;
             background-color: rgba(0, 0, 0, 0.15);
         }
 
         .navicon:active {
+            border-radius: 0px;
             background-color: rgba(0, 0, 0, 0.3);
         }
 
@@ -82,30 +85,34 @@
             width: 100%;
         }
 
-        #searchIcon {
+        #searchBtn {
             position: absolute;
             top: 0;
             right: 0;
+            opacity: 0.5;
+        }
+
+        .clickIcon {
+            opacity: 0.8;
             width: 24px;
             height: 24px;
             padding: 2px;
             margin: 4px;
-            opacity: 0.5;
             border-radius: 0px;
             background-color: transparent;
             transition: all 0.2s;
         }
 
-        #searchIcon:hover {
+        .clickIcon:hover {
             border-radius: 4px;
-            background-color: rgba(0, 0, 0, 0.15);
-            opacity: 0.75;
+            background-color: rgba(50, 180, 50, 0.3);
+            opacity: 0.9 !important;
         }
 
-        #searchIcon:active {
+        .clickIcon:active {
             border-radius: 8px;
-            background-color: rgba(0, 0, 0, 0.3);
-            opacity: 1;
+            background-color: rgba(50, 180, 50, 0.6);
+            opacity: 1 !important;
         }
 
         input {
@@ -121,26 +128,50 @@
             border: none;
             border-bottom: 1px solid #777777;
             outline: none;
+            transition: all 0.2s linear;
         }
 
         input:focus-visible {
-            height: 27px !important;
+            height: 27.25px !important;
             border-bottom: 2px solid #35f39a !important;
         }
 
         input:hover {
-            height: 26.5px;
+            height: 26.75px;
             border-bottom: 1.5px solid #333333;
         }
 
         input:active {
-            height: 27px !important;
+            height: 27.25px !important;
             border-bottom: 2px solid #35f39a !important;
         }
 
         #search {
             left: 0px;
             top: 0px;
+        }
+
+        .settingFloat {
+            display: none;
+            opacity: 0;
+            z-index: 10;
+            top: 0px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 8px;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px) brightness(100%);
+            -webkit-backdrop-filter: blur(2px) brightness(100%);
+            box-shadow: 2px 2px 4px rgba(77, 155, 22, 0.6);
+            border-radius: 4px;
+            transition: all 0.25s;
+        }
+
+        .settingFloat.show {
+            top: 32px;
+            opacity: 1;
         }
     </style>
 </head>
@@ -155,10 +186,11 @@
             </div>
             <div class="search" style="display:flex;">
                 <input role="textbox" tabindex="0" id="search" name="搜索" placeholder="搜索">
-                <img id="searchIcon" src="/static/img/icon/search.svg">
+                <img class="clickIcon" id="searchBtn" src="/static/img/icon/search.svg">
             </div>
             <div class="rightNavi" style="display:flex;">
-                <div class="navicon" id="settingBtn" aria-label="设置" role="button" alt="设置">
+                <div class="navicon" id="settingBtn" aria-label="设置" role="button" alt="设置"
+                    onclick="Module.settings.show();">
                     <img class="navicon-img" src="/static/img/icon/setting.svg">
                 </div>
             </div>
@@ -172,12 +204,38 @@
         <div class="side"></div>
         <div class="list"></div>
     </div>
+    <div class="settingFloat" id="settingFloat">
+        <div style="text-align:end;width:100%">
+            <img class="clickIcon" id="hidesettingBtn" src="/static/img/icon/close.svg"
+                onclick="Module.settings.hide();">
+            <img class="clickIcon" id="savesettingBtn" src="/static/img/icon/save.svg"
+                onclick="Module.settings.save();">
+        </div>
+    </div>
     <script>
+        const sleep = delay => new Promise((resolve) => setTimeout(resolve, delay));
         if (document.referrer.indexOf(location.origin) == 0) {
             document.getElementById("backBtn").style.display = "inline";
             document.getElementById("backBtn").addEventListener("click", () => {
                 history.back();
             });
+        }
+        const Module = {
+            settings: {
+                show: async () => {
+                    document.getElementById("settingFloat").style.display = "flex";
+                    await sleep(1);
+                    document.getElementById("settingFloat").className = "settingFloat show";
+                },
+                hide: async () => {
+                    document.getElementById("settingFloat").className = "settingFloat";
+                    await sleep(250);
+                    document.getElementById("settingFloat").style.display = "none";
+                },
+                save: () => {
+                    Module.settings.hide();
+                }
+            }
         }
     </script>
 </body>

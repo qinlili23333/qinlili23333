@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
+.navbar {
+    height: 32px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navicon {
+    border-radius: 16px;
+    display: inline;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    transition: all 0.3s;
+    background-color: transparent;
+}
+
+.navicon:hover {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.navicon:active {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navicon-img {
+    width: 100%;
+    height: 100%
+}
+
+#loading {
+    display: inline;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+}
+
+#download {
+    display: none;
+    height: 48px;
+    width: 160px;
+    padding: 8px;
+    background-color: greenyellow;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+}
+
+.content {
+    padding-left: 8px;
+    padding-left: 8px;
+}
