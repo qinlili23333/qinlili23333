@@ -180,14 +180,17 @@
         {
             "name": "游戏相关 - GlacierLab",
             "icon": "/static/img/icon/game.svg",
+            "sublist": []
         },
         {
             "name": "浏览器脚本",
             "icon": "/static/img/icon/chrome.svg",
+            "sublist": []
         },
         {
             "name": "其他开源项目",
             "icon": "/static/img/icon/github.svg",
+            "sublist": []
         },
         {
             "name": "加入后宫群",
