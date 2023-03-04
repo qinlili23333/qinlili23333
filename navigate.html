@@ -60,10 +60,17 @@
             height: 100%
         }
 
-        .noti {
+        #noti {
+            transition: all 0.2s;
+            background-color: rgba(0, 0, 0, 0);
             width: 100vw;
             height: 24px;
             display: flex;
+            cursor: pointer;
+        }
+
+        #noti:hover {
+            background-color: rgba(0, 0, 0, 0.15);
         }
 
         #notiIcon {
@@ -71,7 +78,7 @@
             height: 24px;
             margin-left: 4px;
             margin-right: 4px;
-            padding: 2px;
+            padding: 4px;
         }
 
         #notiText {
@@ -228,7 +235,7 @@
                 </div>
             </div>
         </div>
-        <div class="noti">
+        <div id="noti">
             <img id="notiIcon" src="/static/img/loading.svg">
             <span id="notiText">正在加载导航...</span>
         </div>
@@ -247,6 +254,16 @@
     </div>
     <script>
         const sleep = delay => new Promise((resolve) => setTimeout(resolve, delay));
+        const random = (min, max) => {
+            return Math.round(Math.random() * (max - min)) + min;
+        };
+        const link = (url, external) => {
+            if (external) {
+                window.open(url, "_blank");
+            } else {
+                location.href = url;
+            }
+        };
         if (document.referrer.indexOf(location.origin) == 0) {
             document.getElementById("backBtn").style.display = "inline";
             document.getElementById("backBtn").addEventListener("click", () => {
@@ -342,7 +359,18 @@
                 }
             }
         };
-        Module.autoinit.run();
+        //初始化
+        (async () => {
+            Module.autoinit.run();
+            const naviList = await Module.naviUpdater.getData();
+            //顶栏
+            const topInfo = naviList.top[random(0, naviList.top.length - 1)];
+            document.getElementById("notiIcon").src = topInfo.icon;
+            document.getElementById("notiText").innerText = topInfo.info;
+            document.getElementById("noti").onclick = () => {
+                link(topInfo.url, topInfo.external);
+            }
+        })();
     </script>
 </body>
 
