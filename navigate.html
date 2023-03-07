@@ -210,6 +210,11 @@
 
         .list {
             width: calc(100% - 128px);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-content: flex-start;
         }
 
         .sideItem {
@@ -228,7 +233,8 @@
             transition: all 0.2s;
         }
 
-        .sideItem:hover {
+        .sideItem:hover,
+        .listItem:hover {
             border-radius: 8px;
             background-color: rgba(0, 0, 0, 0.15);
         }
@@ -237,7 +243,8 @@
             background-color: rgba(138, 255, 138, 0.5);
         }
 
-        .sideItem:active {
+        .sideItem:active,
+        .listItem:active {
             border-radius: 0px;
             background-color: rgba(0, 0, 0, 0.3);
         }
@@ -250,9 +257,65 @@
         }
 
         .sideItemTitle {
-            font-size: 0.9em;
+            font-size: 1em;
             line-height: 20px;
             color: #333;
+        }
+
+        .listItem {
+            border: 1px solid #999;
+            cursor: pointer;
+            border-radius: 16px;
+            background-color: transparent;
+            align-items: center;
+            max-width: 400px;
+            display: flex;
+            padding: 8px;
+            margin: 4px;
+            flex-direction: row;
+            justify-content: space-around;
+            transition: all 0.2s;
+        }
+
+        .listItem:hover {
+            border: 1px solid #666;
+        }
+
+        .listItem:active {
+            border: 1px solid #333;
+        }
+
+
+        .listItemTextGroup {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .listItemIcon {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            margin-right: 4px;
+        }
+
+        .listItemTitle {
+            word-break: break-all;
+            font-size: 1em;
+            color: #000;
+            line-height: 20px;
+            height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .listItemDesc {
+            word-break: break-all;
+            font-size: 0.85em;
+            color: #333;
+            line-height: 17px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 17px;
         }
     </style>
 </head>
@@ -266,7 +329,7 @@
                 </div>
             </div>
             <div class="search" style="display:flex;">
-                <input role="textbox" tabindex="0" id="search" name="搜索" placeholder="搜索">
+                <input role="textbox" id="search" name="搜索" placeholder="搜索">
                 <img class="clickIcon" id="searchBtn" src="/static/img/icon/search.svg">
             </div>
             <div class="rightNavi" style="display:flex;">
@@ -298,7 +361,7 @@
         const random = (min, max) => {
             return Math.round(Math.random() * (max - min)) + min;
         };
-        const link = (url, external) => {
+        const link = (url, external, deeplink) => {
             if (external) {
                 window.open(url, "_blank");
             } else {
@@ -414,22 +477,38 @@
                 render: () => {
                     document.querySelector(".side").innerHTML = "";
                     window.naviList.list.forEach((item, index) => {
-                        const list = document.createElement("div");
-                        list.className = "sideItem";
-                        list.innerHTML = `
+                        const side = document.createElement("div");
+                        side.className = "sideItem";
+                        side.innerHTML = `
                         <img class="sideItemIcon" src="${item.icon}">
                         <span class="sideItemTitle">${item.name}</span>
                         `;
-                        list.onclick = () => {
+                        side.onclick = () => {
                             Module.list.renderSublist(item.sublist);
                             document.querySelector(".sideItem[active]") ? document.querySelector(".sideItem[active]").removeAttribute("active") : false;
-                            list.setAttribute("active", "true");
+                            side.setAttribute("active", "true");
                         };
-                        document.querySelector(".side").appendChild(list);
+                        document.querySelector(".side").appendChild(side);
                     });
+                    document.querySelector(".sideItem").click();
                 },
                 renderSublist: sublist => {
                     document.querySelector(".list").innerHTML = "";
+                    sublist.forEach((item, index) => {
+                        const list = document.createElement("div");
+                        list.className = "listItem";
+                        list.innerHTML = `
+                        <img class="listItemIcon" src="${item.icon}">
+                        <div class="listItemTextGroup">
+                            <span class="listItemTitle">${item.name}</span>
+                            <span class="listItemDesc">${item.description}</span>
+                        </div>
+                        `;
+                        list.onclick = () => {
+                            link(item.url, item.external);
+                        };
+                        document.querySelector(".list").appendChild(list);
+                    });
                 },
                 filter: text => {
 

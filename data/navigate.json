@@ -82,6 +82,17 @@
                     "icon": "/static/img/ext_icon/greasyfork.webp",
                     "url": "https://greasyfork.org/zh-CN/users/455225",
                     "external": true
+                },
+                {
+                    "name": "Telegram",
+                    "description": "琴梨梨的瓜田@qinlilibeta",
+                    "icon": "/static/img/icon/telegram.svg",
+                    "url": "https://t.me/qinlilibeta",
+                    "deeplink": [
+                        "tg://resolve?domain=qinlilibeta/",
+                        "tg:resolve?domain=qinlilibeta"
+                    ],
+                    "external": true
                 }
             ]
         },
@@ -143,7 +154,7 @@
                 },
                 {
                     "name": "蓝屏制造器",
-                    "description": "访问\\\\.\\globalroot\\device\\condrv\\kernelconnect制造一个真的蓝屏",
+                    "description": "利用Windows内核漏洞制造一个真的蓝屏",
                     "icon": "/static/img/ext_icon/bsod.webp",
                     "iconLicensing": "https://www.vecteezy.com/vector-art/16284723-blue-screen-vector-icon-design",
                     "url": "https://bsod.qinlili.bid/",
@@ -219,8 +230,8 @@
                 },
                 {
                     "name": "Discord-嫣红阁",
-                    "description": "@sanhelou",
-                    "icon": "/static/img/icon/telegram.svg",
+                    "description": "475828338557059073",
+                    "icon": "/static/img/ext_icon/discord.svg",
                     "url": "https://discord.com/invite/n8EwMFn",
                     "deeplink": [
                         "intent://discordapp.page.link/?link=https://discord.gg/n8EwMFn?fingerprint%3D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%26attemptId%3D1cf45b5b-9b04-49c0-b096-46d1429a5da5&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your+place+to+talk+with+communities+and+friends.&utm_source=invite&efr=1#Intent;package=com.google.android.gms;action=com.google.firebase.dynamiclinks.VIEW_DYNAMIC_LINK;scheme=https;S.browser_fallback_url=https://play.google.com/store/apps/details%3Fid%3Dcom.discord&pcampaignid%3Dfdl_long&url%3Dhttps://discord.gg/n8EwMFn%3Ffingerprint%253D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%2526attemptId%253D1cf45b5b-9b04-49c0-b096-46d1429a5da5;end"
