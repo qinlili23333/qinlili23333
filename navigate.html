@@ -268,7 +268,7 @@
             border-radius: 16px;
             background-color: transparent;
             align-items: center;
-            max-width: 400px;
+            max-width: min(calc(100vw - 120px), 400px);
             display: flex;
             padding: 8px;
             margin: 4px;
@@ -299,6 +299,7 @@
         }
 
         .listItemTitle {
+            display: inline-block;
             word-break: break-all;
             font-size: 1em;
             color: #000;
@@ -309,6 +310,7 @@
         }
 
         .listItemDesc {
+            display: inline-block;
             word-break: break-all;
             font-size: 0.85em;
             color: #333;
