@@ -193,8 +193,6 @@
 
         .side,
         .list {
-            padding-left: 8px;
-            padding-right: 8px;
             height: 100%;
             overflow-x: hidden;
             overflow-y: auto;
@@ -212,6 +210,49 @@
 
         .list {
             width: calc(100% - 128px);
+        }
+
+        .sideItem {
+            cursor: pointer;
+            border-radius: 16px;
+            background-color: transparent;
+            align-items: center;
+            width: 100%;
+            display: flex;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            flex-direction: row;
+            justify-content: space-around;
+            transition: all 0.2s;
+        }
+
+        .sideItem:hover {
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .sideItem[active] {
+            background-color: rgba(138, 255, 138, 0.5);
+        }
+
+        .sideItem:active {
+            border-radius: 0px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .sideItemIcon {
+            vertical-align: middle;
+            width: 24px;
+            height: 100%;
+            margin-right: 4px;
+        }
+
+        .sideItemTitle {
+            font-size: 0.9em;
+            line-height: 20px;
+            color: #333;
         }
     </style>
 </head>
@@ -357,19 +398,50 @@
                     Module.pref.data[key] = value;
                     Module.pref.sync();
                 }
+            },
+            top: {
+                render: () => {
+                    //顶栏
+                    const topInfo = naviList.top[random(0, naviList.top.length - 1)];
+                    document.getElementById("notiIcon").src = topInfo.icon;
+                    document.getElementById("notiText").innerText = topInfo.info;
+                    document.getElementById("noti").onclick = () => {
+                        link(topInfo.url, topInfo.external);
+                    }
+                }
+            },
+            list: {
+                render: () => {
+                    document.querySelector(".side").innerHTML = "";
+                    window.naviList.list.forEach((item, index) => {
+                        const list = document.createElement("div");
+                        list.className = "sideItem";
+                        list.innerHTML = `
+                        <img class="sideItemIcon" src="${item.icon}">
+                        <span class="sideItemTitle">${item.name}</span>
+                        `;
+                        list.onclick = () => {
+                            Module.list.renderSublist(item.sublist);
+                            document.querySelector(".sideItem[active]") ? document.querySelector(".sideItem[active]").removeAttribute("active") : false;
+                            list.setAttribute("active", "true");
+                        };
+                        document.querySelector(".side").appendChild(list);
+                    });
+                },
+                renderSublist: sublist => {
+                    document.querySelector(".list").innerHTML = "";
+                },
+                filter: text => {
+
+                }
             }
         };
         //初始化
         (async () => {
             Module.autoinit.run();
-            const naviList = await Module.naviUpdater.getData();
-            //顶栏
-            const topInfo = naviList.top[random(0, naviList.top.length - 1)];
-            document.getElementById("notiIcon").src = topInfo.icon;
-            document.getElementById("notiText").innerText = topInfo.info;
-            document.getElementById("noti").onclick = () => {
-                link(topInfo.url, topInfo.external);
-            }
+            window.naviList = await Module.naviUpdater.getData();
+            Module.top.render();
+            Module.list.render();
         })();
     </script>
 </body>
