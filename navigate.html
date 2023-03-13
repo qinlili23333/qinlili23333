@@ -415,8 +415,8 @@
             },
             naviUpdater: {
                 init: async () => {
+                    await sleep(2000);
                     if ((Module.pref.get("lastNaviUpdate") == new Date().toLocaleDateString()) && localStorage.naviCache) { } else {
-                        await sleep(2000);
                         Module.naviUpdater.update();
                     };
                 },
@@ -476,6 +476,11 @@
                 }
             },
             list: {
+                init: () => {
+                    document.getElementById("searchBtn").addEventListener("click", () => {
+                        Module.list.filter(document.getElementById("search").value);
+                    });
+                },
                 render: () => {
                     document.querySelector(".side").innerHTML = "";
                     window.naviList.list.forEach((item, index) => {
@@ -513,7 +518,16 @@
                     });
                 },
                 filter: text => {
-
+                    let filterList = [];
+                    window.naviList.list.forEach((item, index) => {
+                        item.sublist.forEach((item, index) => {
+                            if (item.name.indexOf(text) != -1 || item.description.indexOf(text) != -1) {
+                                filterList.push(item);
+                            };
+                        });
+                    });
+                    Module.list.renderSublist(filterList);
+                    document.querySelector(".sideItem[active]") ? document.querySelector(".sideItem[active]").removeAttribute("active") : false;
                 }
             }
         };
