@@ -88,10 +88,7 @@
                     "description": "琴梨梨的瓜田@qinlilibeta",
                     "icon": "/static/img/icon/telegram.svg",
                     "url": "https://t.me/qinlilibeta",
-                    "deeplink": [
-                        "tg://resolve?domain=qinlilibeta/",
-                        "tg:resolve?domain=qinlilibeta"
-                    ],
+                    "deeplink": "tg://resolve?domain=qinlilibeta",
                     "external": true
                 }
             ]
@@ -172,7 +169,8 @@
                     "name": "KiyomiPDF",
                     "description": "轻量免费纯净的PDF阅读器",
                     "icon": "/static/img/icon/pdf.svg",
-                    "url": "/products/android/pdf/"
+                    "url": "/products/android/pdf/",
+                    "source": "https://github.com/qinlili23333/kiyomiPDF"
                 }
             ]
         },
@@ -184,7 +182,8 @@
                     "name": "nw.Flash",
                     "description": "拯救大连车务段",
                     "icon": "/static/img/ext_icon/nwflash.webp",
-                    "url": "/products/windows/nwflash/"
+                    "url": "/products/windows/nwflash/",
+                    "source": "https://github.com/qinlili23333/nw.Flash"
                 }
             ]
         },
@@ -212,9 +211,7 @@
                     "description": "群号：547873715",
                     "icon": "/static/img/icon/qq.svg",
                     "url": "https://qm.qq.com/cgi-bin/qm/qr?k=f_Nc6Gt0n-jBMNCjpopNJf6-mnoRLY5x",
-                    "deeplink": [
-                        "mqqopensdkapi://bizAgent/qm/qr?url=https%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Fk%3Df_Nc6Gt0n-jBMNCjpopNJf6-mnoRLY5x%26jump_from%3D%26auth%3D%26app_name%3D%26authSig%3D%26source_id%3D3_40001"
-                    ],
+                    "deeplink": "mqqopensdkapi://bizAgent/qm/qr?url=https%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Fk%3Df_Nc6Gt0n-jBMNCjpopNJf6-mnoRLY5x%26jump_from%3D%26auth%3D%26app_name%3D%26authSig%3D%26source_id%3D3_40001",
                     "external": true
                 },
                 {
@@ -222,10 +219,7 @@
                     "description": "@sanhelou",
                     "icon": "/static/img/icon/telegram.svg",
                     "url": "https://t.me/sanhelou",
-                    "deeplink": [
-                        "tg://resolve?domain=sanhelou/",
-                        "tg:resolve?domain=sanhelou"
-                    ],
+                    "deeplink": "tg://resolve?domain=sanhelou",
                     "external": true
                 },
                 {
@@ -233,9 +227,7 @@
                     "description": "475828338557059073",
                     "icon": "/static/img/ext_icon/discord.svg",
                     "url": "https://discord.com/invite/n8EwMFn",
-                    "deeplink": [
-                        "intent://discordapp.page.link/?link=https://discord.gg/n8EwMFn?fingerprint%3D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%26attemptId%3D1cf45b5b-9b04-49c0-b096-46d1429a5da5&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your+place+to+talk+with+communities+and+friends.&utm_source=invite&efr=1#Intent;package=com.google.android.gms;action=com.google.firebase.dynamiclinks.VIEW_DYNAMIC_LINK;scheme=https;S.browser_fallback_url=https://play.google.com/store/apps/details%3Fid%3Dcom.discord&pcampaignid%3Dfdl_long&url%3Dhttps://discord.gg/n8EwMFn%3Ffingerprint%253D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%2526attemptId%253D1cf45b5b-9b04-49c0-b096-46d1429a5da5;end"
-                    ],
+                    "deeplink": "intent://discordapp.page.link/?link=https://discord.gg/n8EwMFn?fingerprint%3D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%26attemptId%3D1cf45b5b-9b04-49c0-b096-46d1429a5da5&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your+place+to+talk+with+communities+and+friends.&utm_source=invite&efr=1#Intent;package=com.google.android.gms;action=com.google.firebase.dynamiclinks.VIEW_DYNAMIC_LINK;scheme=https;S.browser_fallback_url=https://play.google.com/store/apps/details%3Fid%3Dcom.discord&pcampaignid%3Dfdl_long&url%3Dhttps://discord.gg/n8EwMFn%3Ffingerprint%253D1080048158366781440.Lwipek-vUIDZv4YWqF3TpGnwStQ%2526attemptId%253D1cf45b5b-9b04-49c0-b096-46d1429a5da5;end",
                     "external": true
                 }
             ]
