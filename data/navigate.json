@@ -123,6 +123,16 @@
                     "external": true
                 },
                 {
+                    "name": "阿梓动态壁纸",
+                    "description": "网页移植版本",
+                    "icon": "/static/img/ext_icon/azusa.webp",
+                    "iconLicensing": "https://space.bilibili.com/7706705/",
+                    "url": "https://azusa.qinlili.bid/",
+                    "betaurl": "https://azusa.beta.qinlili.bid/",
+                    "source": "https://github.com/qinlili23333/Unity-KabuAzi-Web-Android",
+                    "external": true
+                },
+                {
                     "name": "纯色网页/屏幕台灯",
                     "description": "显示一个纯色的网页",
                     "icon": "/static/img/icon/lamp.svg",
@@ -171,6 +181,14 @@
                     "icon": "/static/img/icon/pdf.svg",
                     "url": "/products/android/pdf/",
                     "source": "https://github.com/qinlili23333/kiyomiPDF"
+                },
+                {
+                    "name": "去他妈的缓存",
+                    "description": "基于Shizuku的简单缓存清理工具",
+                    "icon": "/static/img/icon/clear.svg",
+                    "url": "https://github.com/qinlili23333/FuckCache",
+                    "source": "https://github.com/qinlili23333/FuckCache",
+                    "external": true
                 }
             ]
         },
@@ -179,11 +197,36 @@
             "icon": "/static/img/icon/windows.svg",
             "sublist": [
                 {
+                    "name": "PDFonty",
+                    "description": "专注PDF字体疑难杂症",
+                    "icon": "/static/img/icon/pdf.svg",
+                    "url": "/products/windows/pdfonty/",
+                    "source": "https://github.com/qinlili23333/PDFonty"
+                },
+                {
                     "name": "nw.Flash",
                     "description": "拯救大连车务段",
                     "icon": "/static/img/ext_icon/nwflash.webp",
                     "url": "/products/windows/nwflash/",
                     "source": "https://github.com/qinlili23333/nw.Flash"
+                },
+                {
+                    "name": "清涟Elina",
+                    "description": "南中医校园网防掉线",
+                    "icon": "/static/img/icon/wifi.svg",
+                    "url": "https://github.com/qinlili23333/NJUCM-Elina",
+                    "source": "https://github.com/qinlili23333/NJUCM-Elina",
+                    "external": true,
+                    "legacy": true
+                },
+                {
+                    "name": "CC-ATTIS",
+                    "description": "刷CloudCampus",
+                    "icon": "/static/img/ext_icon/cloudcampus.webp",
+                    "url": "https://github.com/qinlili23333/CC-ATTIS",
+                    "source": "https://github.com/qinlili23333/CC-ATTIS",
+                    "external": true,
+                    "legacy": true
                 }
             ]
         },
@@ -195,7 +238,16 @@
         {
             "name": "浏览器脚本",
             "icon": "/static/img/icon/chrome.svg",
-            "sublist": []
+            "sublist": [
+                {
+                    "name": "B站随机播放",
+                    "description": "分P视频随机播放",
+                    "icon": "/static/img/ext_icon/bili.webp",
+                    "url": "https://greasyfork.org/scripts/441632",
+                    "source": "https://github.com/qinlili23333/BiliRandomPlay",
+                    "external": true
+                }
+            ]
         },
         {
             "name": "其他开源项目",

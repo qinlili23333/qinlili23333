@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="nw.Flash是nw.js和旧版本Flash的缝合怪，可在最新系统上提供纯净的Flash网页和文件浏览功能" />
+    <meta name="description" content="PDFonty是琴梨梨开发的专注解决PDF字体问题的工具，基于iText，提供字体去重等多种功能" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <link rel="canonical" href="https://qinlili.bid/products/windows/nwflash" />
-    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://qinlili.bid/products/windows/pdfonty />
+    <link rel=" icon" href="/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#bfee6f">
-    <title>nw.Flash-nw.js和旧版本Flash的缝合怪-由琴梨梨开发</title>
+    <title>PDFonty-专注PDF字体疑难杂症-由琴梨梨开发</title>
     <link rel="stylesheet" href="/static/css/public.css">
     <link rel="stylesheet" href="/static/css/product.css">
     <link rel="preconnect" href="https://api.github.com">
@@ -40,8 +40,9 @@
         </div>
     </div>
     <div class="content">
-        <H1>nw.Flash</H1>
-        <H4>nw.js和旧版本Flash的缝合怪，由琴梨梨基于<a href="https://nwjs.io/" target="_blank">nw.js</a>和旧版本Flash打造</H4>
+        <H1>PDFonty</H1>
+        <H4>专注PDF字体疑难杂症，由琴梨梨基于<a href="https://itextpdf.com/products/itext-7/itext-7-core" target="_blank">iText7</a>打造
+        </H4>
         <H5 id="info">当前版本：---&nbsp;&nbsp;&nbsp;下载体积：---</H5>
         <br>
         <a id="download">
@@ -69,8 +70,8 @@
             document.getElementById("share").style.display = "inline";
             document.getElementById("share").addEventListener("click", async () => {
                 navigator.share({
-                    title: "nw.Flash",
-                    text: "nw.js和旧版本Flash的缝合怪，可在最新系统上提供纯净的Flash网页和文件浏览功能",
+                    title: "PDFonty",
+                    text: "PDFonty是琴梨梨开发的专注解决PDF字体问题的工具，基于iText，提供字体去重等多种功能",
                     url: location.href
                 });
             });
@@ -102,7 +103,7 @@
             document.getElementById("loading").style.display = loading ? "inline" : "none";
         }
         //读取版本信息
-        fetch("https://api.github.com/repos/qinlili23333/nw.Flash/releases").then(b => b.json()).then(json => {
+        fetch("https://api.github.com/repos/qinlili23333/PDFonty/releases").then(b => b.json()).then(json => {
             console.log(json);
             let current = json[0];
             document.getElementById("info").innerText = "当前版本：" + current.name + "   下载体积：" + humanFileSize(current.assets[0].size);

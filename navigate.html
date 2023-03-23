@@ -295,6 +295,8 @@
         }
 
         .listItemIcon {
+            object-fit: cover;
+            border-radius: 2px;
             vertical-align: middle;
             width: 24px;
             height: 24px;
@@ -595,6 +597,7 @@
                         item.external ? tipIcons += newTip("/static/img/icon/external.svg") : false;
                         item.working ? tipIcons += newTip("/static/img/icon/working.svg") : false;
                         item.legacy ? tipIcons += newTip("/static/img/icon/legacy.svg") : false;
+                        item.betaurl ? tipIcons += newTip("/static/img/icon/vial.svg") : false;
                         list.innerHTML = `
                         <img class="listItemIcon" src="${item.icon}">
                         <div class="listItemTextGroup">
@@ -617,11 +620,11 @@
                                 menu.onclick = click;
                                 return document.getElementById("menuList").appendChild(menu);
                             };
+                            item.betaurl ? newMenu("/static/img/icon/vial.svg", "访问测试版本", () => { link(item.betaurl, item.external) }) : false;
                             item.source ? newMenu("/static/img/icon/github.svg", "查看项目仓库", () => { link(item.source, true) }) : false;
                             item.iconLicensing ? newMenu("/static/img/icon/iconsource.svg", "查看图标版权来源", () => { link(item.iconLicensing, true) }) : false;
                             item.deeplink ? newMenu("/static/img/icon/app.svg", "唤起本地APP", () => { link(item.deeplink); }) : false;
                             navigator.share ? newMenu("/static/img/icon/share.svg", "分享", () => { navigator.share({ title: "item.title", text: item.description, url: item.url }) }) : false;
-
                             Module.magicMenu.showMenu();
                         };
                         document.querySelector(".list").appendChild(list);
