@@ -186,7 +186,7 @@
                     "name": "去他妈的缓存",
                     "description": "基于Shizuku的简单缓存清理工具",
                     "icon": "/static/img/icon/clear.svg",
-                    "url": "https://github.com/qinlili23333/FuckCache",
+                    "url": "https://github.com/qinlili23333/FuckCache/releases",
                     "source": "https://github.com/qinlili23333/FuckCache",
                     "external": true
                 }
@@ -204,6 +204,15 @@
                     "source": "https://github.com/qinlili23333/PDFonty"
                 },
                 {
+                    "name": "ReinePrint",
+                    "description": "专注PDF字体疑难杂症",
+                    "icon": "/static/img/ext_icon/reine.avif",
+                    "iconLicensing": "https://space.bilibili.com/698029620/",
+                    "url": "https://github.com/qinlili23333/ReinePrint/releases",
+                    "source": "https://github.com/qinlili23333/ReinePrint",
+                    "external": true
+                },
+                {
                     "name": "nw.Flash",
                     "description": "拯救大连车务段",
                     "icon": "/static/img/ext_icon/nwflash.webp",
@@ -214,7 +223,7 @@
                     "name": "清涟Elina",
                     "description": "南中医校园网防掉线",
                     "icon": "/static/img/icon/wifi.svg",
-                    "url": "https://github.com/qinlili23333/NJUCM-Elina",
+                    "url": "https://github.com/qinlili23333/NJUCM-Elina/releases",
                     "source": "https://github.com/qinlili23333/NJUCM-Elina",
                     "external": true,
                     "legacy": true
@@ -223,7 +232,7 @@
                     "name": "CC-ATTIS",
                     "description": "刷CloudCampus",
                     "icon": "/static/img/ext_icon/cloudcampus.webp",
-                    "url": "https://github.com/qinlili23333/CC-ATTIS",
+                    "url": "https://github.com/qinlili23333/CC-ATTIS/releases",
                     "source": "https://github.com/qinlili23333/CC-ATTIS",
                     "external": true,
                     "legacy": true
@@ -231,7 +240,7 @@
             ]
         },
         {
-            "name": "游戏相关 - GlacierLab",
+            "name": "GlacierLab",
             "icon": "/static/img/icon/game.svg",
             "sublist": []
         },
@@ -244,7 +253,25 @@
                     "description": "分P视频随机播放",
                     "icon": "/static/img/ext_icon/bili.webp",
                     "url": "https://greasyfork.org/scripts/441632",
+                    "jsinstall": "https://greasyfork.org/scripts/441632/code/B%E7%AB%99%E5%88%86P%E8%A7%86%E9%A2%91%E9%9A%8F%E6%9C%BA%E6%92%AD%E6%94%BE.user.js",
                     "source": "https://github.com/qinlili23333/BiliRandomPlay",
+                    "external": true
+                },
+                {
+                    "name": "学习强国小帮手",
+                    "description": "下载/增强/精简/去水印",
+                    "icon": "/static/img/ext_icon/xxqg.webp",
+                    "url": "https://greasyfork.org/scripts/441632",
+                    "jsinstall": "https://greasyfork.org/scripts/429991/code/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD%E6%A2%A8%E9%85%B1%E5%B0%8F%E5%B8%AE%E6%89%8B.user.js",
+                    "source": "https://github.com/qinlili23333/BiliRandomPlay",
+                    "external": true
+                },
+                {
+                    "name": "Vibrate Simulator",
+                    "description": "桌面端模拟震动",
+                    "icon": "/static/img/icon/shake.svg",
+                    "url": "https://greasyfork.org/scripts/439319",
+                    "jsinstall": "https://greasyfork.org/scripts/439319/code/Vibrate%20Simulator.user.js",
                     "external": true
                 }
             ]

@@ -1,25 +1,21 @@
 ::-webkit-scrollbar {
     height: 12px;
-    width: 8px;
+    width: 4px;
     background: transparent;
     z-index: 12;
     overflow: visible;
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 10px;
-    background-color: #bfee6f;
+    background-color: #bfee6f4e;
     z-index: 12;
-    border: 3px solid rgba(0, 0, 0, 0);
+    border-left: 2px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     transition: background-color .32s ease-in-out;
-    margin: 4px;
-    min-height: 32px;
-    min-width: 32px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #bfee6f;
+    background: #bfee6faf;
 }
 
 ::-webkit-scrollbar-corner {
