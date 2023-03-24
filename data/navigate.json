@@ -103,6 +103,7 @@
                     "icon": "/static/img/ext_icon/ctfile.webp",
                     "url": "https://ctfile.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/ctfileGet",
+                    "pwa": true,
                     "external": true
                 },
                 {
@@ -111,6 +112,7 @@
                     "icon": "/static/img/ext_icon/545.webp",
                     "url": "https://545.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/545WebPlayer",
+                    "pwa": true,
                     "external": true
                 },
                 {
@@ -120,6 +122,7 @@
                     "iconLicensing": "https://www.flaticon.com/free-icon/game-console_1083364",
                     "url": "https://kumo.qinlili.bid/",
                     "source": "https://github.com/GlacierLab/KumoNavigate",
+                    "pwa": true,
                     "external": true
                 },
                 {
@@ -130,6 +133,7 @@
                     "url": "https://azusa.qinlili.bid/",
                     "betaurl": "https://azusa.beta.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/Unity-KabuAzi-Web-Android",
+                    "pwa": true,
                     "external": true
                 },
                 {
@@ -138,6 +142,14 @@
                     "icon": "/static/img/icon/lamp.svg",
                     "url": "https://purecolor.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/PureColorWebpage",
+                    "external": true
+                },
+                {
+                    "name": "续航测试",
+                    "description": "基于7ZIP+WASM",
+                    "icon": "/static/img/icon/battery.svg",
+                    "url": "https://batt.qinlili.bid/",
+                    "source": "https://github.com/qinlili23333/WebBattMark",
                     "external": true
                 },
                 {
@@ -272,6 +284,32 @@
                     "icon": "/static/img/icon/shake.svg",
                     "url": "https://greasyfork.org/scripts/439319",
                     "jsinstall": "https://greasyfork.org/scripts/439319/code/Vibrate%20Simulator.user.js",
+                    "external": true
+                },
+                {
+                    "name": "WMP播放器",
+                    "description": "使用PotPlayer替代WMP控件",
+                    "icon": "/static/img/ext_icon/wmp.avif",
+                    "url": "https://greasyfork.org/zh-CN/scripts/441125",
+                    "jsinstall": "https://greasyfork.org/scripts/441125/code/WMP%E6%92%AD%E6%94%BE%E5%99%A8.user.js",
+                    "source": "https://gist.github.com/qinlili23333/e6c7adb01092ecd094c76b7e2021cd1f",
+                    "external": true
+                },
+                {
+                    "name": "人卫慕课播放助手",
+                    "description": "高清化+缓冲加速",
+                    "icon": "/static/img/ext_icon/pmph.webp",
+                    "url": "https://greasyfork.org/zh-CN/scripts/440564",
+                    "jsinstall": "https://greasyfork.org/scripts/440564/code/%E4%BA%BA%E5%8D%AB%E6%85%95%E8%AF%BE%E6%92%AD%E6%94%BE%E5%8A%A9%E6%89%8B.user.js",
+                    "source": "https://gist.github.com/qinlili23333/ab2ea32e38fe3d390b7d053d53379e8e",
+                    "external": true
+                },
+                {
+                    "name": "人卫慕课瞎几把蒙",
+                    "description": "高清化+缓冲加速",
+                    "icon": "/static/img/ext_icon/pmph.webp",
+                    "url": "https://greasyfork.org/zh-CN/scripts/441899",
+                    "jsinstall": "https://greasyfork.org/scripts/441899/code/%E4%BA%BA%E5%8D%AB%E6%85%95%E8%AF%BE%E7%9E%8E%E5%87%A0%E6%8A%8A%E8%92%99.user.js",
                     "external": true
                 }
             ]

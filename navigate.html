@@ -543,7 +543,7 @@
                     localStorage.pref = JSON.stringify(Module.pref.data);
                 },
                 get: (key) => {
-                    return Module.pref.data[key];
+                    return Module.pref.data[key] || false;
                 },
                 set: (key, value) => {
                     Module.pref.data[key] = value;
@@ -591,10 +591,11 @@
                         return `<img class="tipIcon" src="${icon}">`
                     }
                     sublist.forEach((item, index) => {
+                        if (item.hidden && !Module.pref.get("showHidden")) { return false; };
                         const list = document.createElement("a");
                         list.className = "listItem";
                         let tipIcons = "";
-                        item.external ? tipIcons += newTip("/static/img/icon/external.svg") : false;
+                        item.pwa ? tipIcons += newTip("/static/img/icon/application.svg") : item.external ? tipIcons += newTip("/static/img/icon/external.svg") : false;
                         item.working ? tipIcons += newTip("/static/img/icon/working.svg") : false;
                         item.legacy ? tipIcons += newTip("/static/img/icon/legacy.svg") : false;
                         item.betaurl ? tipIcons += newTip("/static/img/icon/vial.svg") : false;
