@@ -184,7 +184,7 @@
             ]
         },
         {
-            "name": "Android软件",
+            "name": "Android",
             "icon": "/static/img/icon/android.svg",
             "sublist": [
                 {
@@ -205,7 +205,7 @@
             ]
         },
         {
-            "name": "Windows软件",
+            "name": "Windows",
             "icon": "/static/img/icon/windows.svg",
             "sublist": [
                 {

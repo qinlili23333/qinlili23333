@@ -226,12 +226,12 @@
             align-items: center;
             width: 100%;
             display: flex;
-            padding-left: 8px;
-            padding-right: 8px;
-            padding-top: 16px;
-            padding-bottom: 16px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 12px;
+            padding-bottom: 12px;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             transition: all 0.2s;
         }
 
@@ -396,6 +396,28 @@
         @media (min-width: 700px) {
             #floatMenu {
                 max-width: 400px;
+            }
+        }
+
+        @media (max-width:300px) {
+            .sideItemIcon {
+                display: none;
+            }
+
+            .sideItemTitle {
+                font-size: 0.85em;
+            }
+
+            .listItem {
+                max-width: min(calc(100vw - 88px), 400px);
+            }
+
+            .side {
+                width: 96px;
+            }
+
+            .list {
+                width: calc(100vw - 96px);
             }
         }
     </style>
