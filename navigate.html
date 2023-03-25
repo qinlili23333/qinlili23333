@@ -105,7 +105,7 @@
         .clickIcon {
             cursor: pointer;
             opacity: 0.8;
-            width: 24px;
+            width: auto;
             height: 24px;
             padding: 2px;
             margin: 4px;
@@ -452,11 +452,16 @@
         <div class="list"></div>
     </div>
     <div class="settingFloat" id="settingFloat">
-        <div style="text-align:end;width:100%">
-            <img class="clickIcon" id="hidesettingBtn" src="/static/img/icon/close.svg"
-                onclick="Module.settings.hide();">
-            <img class="clickIcon" id="savesettingBtn" src="/static/img/icon/save.svg"
-                onclick="Module.settings.save();">
+        <div style="display: flex;width:100%;justify-content: space-between;">
+            <span style="font-size: 0.8em;line-height: 20px;" class="clickIcon"
+                onclick="Module.naviUpdater.updateAndRender(this);">强制更新</span>
+            <div>
+                <img class="clickIcon" id="hidesettingBtn" src="/static/img/icon/close.svg"
+                    onclick="Module.settings.hide();">
+                <img class="clickIcon" id="savesettingBtn" src="/static/img/icon/save.svg"
+                    onclick="Module.settings.save();">
+            </div>
+
         </div>
     </div>
     <div id="floatMenuContainer">
@@ -550,6 +555,13 @@
                     } catch (e) {
                         Module.logger.collect(e);
                     }
+                },
+                updateAndRender: async (btn) => {
+                    btn ? btn.innerText = "更新中..." : false;
+                    await Module.naviUpdater.update();
+                    window.naviList = await Module.naviUpdater.getData();
+                    Module.list.render();
+                    btn ? btn.innerText = "更新完成" : false;
                 }
             },
             pref: {
@@ -614,6 +626,12 @@
                     }
                     sublist.forEach((item, index) => {
                         if (item.hidden && !Module.pref.get("showHidden")) { return false; };
+                        if (item.divider) {
+                            const divider = document.createElement("hr");
+                            divider.setAttribute("name", item.name);
+                            document.querySelector(".list").appendChild(divider);
+                            return false;
+                        };
                         const list = document.createElement("a");
                         list.className = "listItem";
                         let tipIcons = "";
@@ -644,6 +662,7 @@
                                 return document.getElementById("menuList").appendChild(menu);
                             };
                             item.betaurl ? newMenu("/static/img/icon/vial.svg", "访问测试版本", () => { link(item.betaurl, item.external) }) : false;
+                            item.backurl ? newMenu("/static/img/icon/backup.svg", "备用地址", () => { link(item.backurl, item.external) }) : false;
                             item.jsinstall ? newMenu("/static/img/icon/install.svg", "直接安装脚本", () => { link(item.jsinstall, false) }) : false;
                             item.source ? newMenu("/static/img/icon/github.svg", "查看项目仓库", () => { link(item.source, true) }) : false;
                             item.iconLicensing ? newMenu("/static/img/icon/iconsource.svg", "查看图标版权来源", () => { link(item.iconLicensing, true) }) : false;
