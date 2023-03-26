@@ -1,5 +1,5 @@
 {
-    "version": "20230325",
+    "version": "20230326",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -17,7 +17,7 @@
                     "name": "旧版小站",
                     "description": "仅供考古",
                     "icon": "/static/img/icon/history.svg",
-                    "url": "https://qinlili.bid/",
+                    "url": "https://legacy.qinlili.bid/",
                     "external": true
                 }
             ]
@@ -303,12 +303,52 @@
                     "pwa": true
                 },
                 {
+                    "name": "原灵深海遗梦",
+                    "description": "全功能网页移植",
+                    "icon": "/static/img/ext_icon/medusa.webp",
+                    "url": "https://medusa.qinlili.bid/play",
+                    "source": "https://github.com/GlacierLab/Medusa-the-Origin",
+                    "external": true,
+                    "pwa": true
+                },
+                {
+                    "name": "枝江往事",
+                    "description": "小游戏暂不可用",
+                    "icon": "/static/img/ext_icon/zhijiang.webp",
+                    "url": "https://zhijiang.qinlili.bid/play",
+                    "source": "https://github.com/GlacierLab/ZhiJiang_Mobile",
+                    "external": true
+                },
+                {
                     "name": "Android移植",
                     "divider": true
                 },
                 {
+                    "name": "原灵深海遗梦",
+                    "description": "全功能Android移植",
+                    "icon": "/static/img/ext_icon/medusa.webp",
+                    "url": "https://medusa.qinlili.bid/",
+                    "source": "https://github.com/GlacierLab/Medusa-the-Origin",
+                    "external": true
+                },
+                {
+                    "name": "枝江往事",
+                    "description": "全功能Android移植",
+                    "icon": "/static/img/ext_icon/zhijiang.webp",
+                    "url": "https://zhijiang.qinlili.bid/",
+                    "source": "https://github.com/GlacierLab/ZhiJiang_Mobile",
+                    "external": true
+                },
+                {
                     "name": "虚拟机整合包",
                     "divider": true
+                },
+                {
+                    "name": "红楼续梦京华风云",
+                    "description": "完整原版一键启动",
+                    "icon": "/static/img/ext_icon/hlxm.webp",
+                    "url": "https://glacier.qinlili.bid/VM/Detail/HLXM.html",
+                    "external": true
                 },
                 {
                     "name": "优化工具和插件",
