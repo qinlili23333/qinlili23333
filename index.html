@@ -210,6 +210,15 @@
     </div>
     <script>
         const Module = {
+            autoinit: {
+                run: () => {
+                    Object.entries(Module).forEach(([key, value]) => {
+                        if (value.init) {
+                            value.init();
+                        }
+                    });
+                }
+            },
             announce: {
                 show: () => {
                     if (document.getElementById("announce")) {
@@ -262,6 +271,26 @@
                         //比对版本号
                     }
                 }
+            },
+            pref: {
+                init: () => {
+                    if (localStorage.pref) {
+                        Module.pref.data = JSON.parse(localStorage.pref);
+                    } else {
+                        Module.pref.sync();
+                    }
+                },
+                data: {},
+                sync: () => {
+                    localStorage.pref = JSON.stringify(Module.pref.data);
+                },
+                get: (key) => {
+                    return Module.pref.data[key] || false;
+                },
+                set: (key, value) => {
+                    Module.pref.data[key] = value;
+                    Module.pref.sync();
+                }
             }
         };
         const status = (icon, text, loading) => {
@@ -270,6 +299,14 @@
             document.getElementById("loadingIcon").style.display = loading ? "block" : "none";
         };
         status(null, "开发阶段暂不启用服务进程", false);
+        //初始化
+        (async () => {
+            Module.autoinit.run();
+            if (Module.pref.get("directNavi") == true && performance.getEntriesByType("navigation")[0].type == "navigate") {
+                location.href = "/navigate";
+            }
+        })();
+
     </script>
 </body>
 

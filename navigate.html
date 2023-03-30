@@ -126,7 +126,7 @@
             opacity: 1 !important;
         }
 
-        input {
+        input[role="textbox"] {
             background-color: transparent;
             position: absolute;
             padding-right: 40px;
@@ -142,17 +142,17 @@
             transition: all 0.2s linear;
         }
 
-        input:focus-visible {
+        input[role="textbox"]:focus-visible {
             height: 27.25px !important;
             border-bottom: 2px solid #35f39a !important;
         }
 
-        input:hover {
+        input[role="textbox"]:hover {
             height: 26.75px;
             border-bottom: 1.5px solid #333333;
         }
 
-        input:active {
+        input[role="textbox"]:active {
             height: 27.25px !important;
             border-bottom: 2px solid #35f39a !important;
         }
@@ -178,11 +178,40 @@
             box-shadow: 2px 2px 4px rgba(77, 155, 22, 0.6);
             border-radius: 4px;
             transition: all 0.25s;
+            flex-direction: column;
         }
 
         .settingFloat.show {
             top: 32px;
             opacity: 1;
+        }
+
+        #settingsBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .settingItem {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding: 2px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .settingItemTitle {
+            font-size: 0.9em;
+            line-height: 20px;
+        }
+
+        .settingItemSwitchInput {
+            height: 20px;
+            width: 24px;
         }
 
         .main {
@@ -426,7 +455,7 @@
     <div class="top">
         <div class="navi">
             <div class="leftNavi" style="display:flex;">
-                <div class="navicon" id="backBtn" style="display:none;" aria-label="返回" role="button" alt="返回">
+                <div class="navicon" id="backBtn" style="display:inline;" aria-label="返回" role="button" alt="返回">
                     <img class="navicon-img" src="/static/img/icon/left.svg">
                 </div>
             </div>
@@ -451,14 +480,13 @@
         <div class="list"></div>
     </div>
     <div class="settingFloat" id="settingFloat">
+        <div id="settingsBox"></div>
         <div style="display: flex;width:100%;justify-content: space-between;">
             <span style="font-size: 0.8em;line-height: 20px;" class="clickIcon"
                 onclick="Module.naviUpdater.updateAndRender(this);">强制更新</span>
             <div>
                 <img class="clickIcon" id="hidesettingBtn" src="/static/img/icon/close.svg"
                     onclick="Module.settings.hide();">
-                <img class="clickIcon" id="savesettingBtn" src="/static/img/icon/save.svg"
-                    onclick="Module.settings.save();">
             </div>
 
         </div>
@@ -483,9 +511,13 @@
             }
         };
         if (document.referrer.indexOf(location.origin) == 0) {
-            document.getElementById("backBtn").style.display = "inline";
             document.getElementById("backBtn").addEventListener("click", () => {
                 history.back();
+            });
+        } else {
+            document.getElementById("backBtn").getElementsByClassName("navicon-img")[0].src = "/static/img/icon/home.svg";
+            document.getElementById("backBtn").addEventListener("click", () => {
+                location.href = "/";
             });
         }
         const Module = {
@@ -511,18 +543,38 @@
                 }
             },
             settings: {
+                init: () => {
+                    Module.settings.list.push({ title: "直接进入导航，跳过首页", key: "directNavi", type: 0 });
+                    Module.settings.list.push({ title: "隐藏不再维护的过时内容", key: "hideLegacy", type: 0 });
+                },
+                list: [],
                 show: async () => {
                     document.getElementById("settingFloat").style.display = "flex";
                     await sleep(1);
                     document.getElementById("settingFloat").className = "settingFloat show";
+                    document.getElementById("settingsBox").innerHTML = "";
+                    Module.settings.list.forEach(item => {
+                        let settingItem = document.createElement("div");
+                        settingItem.className = "settingItem";
+                        let settingItemTitle = document.createElement("span");
+                        settingItemTitle.className = "settingItemTitle";
+                        settingItemTitle.innerText = item.title;
+                        settingItem.appendChild(settingItemTitle);
+                        let settingItemSwitchInput = document.createElement("input");
+                        settingItemSwitchInput.type = "checkbox";
+                        settingItemSwitchInput.className = "settingItemSwitchInput";
+                        settingItemSwitchInput.checked = Module.pref.get(item.key);
+                        settingItemSwitchInput.addEventListener("change", () => {
+                            Module.pref.set(item.key, settingItemSwitchInput.checked);
+                        });
+                        settingItem.appendChild(settingItemSwitchInput);
+                        document.getElementById("settingsBox").appendChild(settingItem);
+                    });
                 },
                 hide: async () => {
                     document.getElementById("settingFloat").className = "settingFloat";
                     await sleep(250);
                     document.getElementById("settingFloat").style.display = "none";
-                },
-                save: () => {
-                    Module.settings.hide();
                 }
             },
             naviUpdater: {
@@ -624,7 +676,7 @@
                         return `<img class="tipIcon" src="${icon}">`
                     }
                     sublist.forEach((item, index) => {
-                        if (item.hidden && !Module.pref.get("showHidden")) { return false; };
+                        if ((item.hidden && !Module.pref.get("showHidden")) || (Module.pref.get("hideLegacy") && item.legacy)) { return false; };
                         if (item.divider) {
                             const divider = document.createElement("hr");
                             divider.setAttribute("name", item.name);
