@@ -173,8 +173,8 @@
             margin: 8px;
             padding: 8px;
             background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(2px) brightness(100%);
-            -webkit-backdrop-filter: blur(2px) brightness(100%);
+            backdrop-filter: blur(5px) brightness(90%);
+            -webkit-backdrop-filter: blur(5px) brightness(90%);
             box-shadow: 2px 2px 4px rgba(77, 155, 22, 0.6);
             border-radius: 4px;
             transition: all 0.25s;
@@ -255,7 +255,6 @@
             vertical-align: middle;
             width: 24px;
             height: 100%;
-            margin-right: 4px;
         }
 
         .sideItemTitle {
@@ -639,8 +638,8 @@
                         item.working ? tipIcons += newTip("/static/img/icon/working.svg") : false;
                         item.legacy ? tipIcons += newTip("/static/img/icon/legacy.svg") : false;
                         item.betaurl ? tipIcons += newTip("/static/img/icon/vial.svg") : false;
-                        list.innerHTML = `
-                        <img class="listItemIcon" src="${item.icon}">
+                        list.innerHTML += item.icon ? `<img class="listItemIcon" src="${item.icon}">` : "";
+                        list.innerHTML += `
                         <div class="listItemTextGroup">
                             <span class="listItemTitle">${item.name}${tipIcons}</span>
                             <span class="listItemDesc">${item.description}</span>
@@ -677,7 +676,7 @@
                     let filterList = [];
                     window.naviList.list.forEach((item, index) => {
                         item.sublist.forEach((item, index) => {
-                            if (item.name.indexOf(text) != -1 || item.description.indexOf(text) != -1) {
+                            if ((item.name.indexOf(text) != -1 || (item.description && item.description.indexOf(text) != -1)) && !item.divider == true) {
                                 filterList.push(item);
                             };
                         });
