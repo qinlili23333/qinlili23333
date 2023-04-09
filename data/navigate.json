@@ -1,5 +1,5 @@
 {
-    "version": "20230326",
+    "version": "20230409",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -248,6 +248,13 @@
                     "external": true
                 },
                 {
+                    "name": "PowerRing",
+                    "description": "让有限的供电功率换取更好的游戏性能",
+                    "url": "https://github.com/GlacierLab/PowerRing/releases",
+                    "source": "https://github.com/GlacierLab/PowerRing",
+                    "external": true
+                },
+                {
                     "name": "nw.Flash",
                     "description": "拯救大连车务段",
                     "icon": "/static/img/ext_icon/nwflash.webp",
@@ -348,6 +355,20 @@
                     "description": "完整原版一键启动",
                     "icon": "/static/img/ext_icon/hlxm.webp",
                     "url": "https://glacier.qinlili.bid/VM/Detail/HLXM.html",
+                    "external": true
+                },
+                {
+                    "name": "激战足球学园",
+                    "description": "最小仅524M",
+                    "icon": "/static/img/ext_icon/PSQ.webp",
+                    "url": "https://glacier.qinlili.bid/VM/Detail/PSQ.html",
+                    "external": true
+                },
+                {
+                    "name": "阿猫阿狗2",
+                    "description": "极速启动",
+                    "icon": "/static/img/ext_icon/TT2.webp",
+                    "url": "https://glacier.qinlili.bid/VM/Detail/TT2.html",
                     "external": true
                 },
                 {
@@ -597,7 +618,7 @@
                     "name": "PhotoTimeFix",
                     "description": "一些强迫症优化",
                     "icon": "/static/img/ext_icon/phototimefix.webp",
-                    "url": "https://apps.microsoft.com/store/detail/phototimefix/9NFL0WD4NJXPs",
+                    "url": "https://apps.microsoft.com/store/detail/phototimefix/9NFL0WD4NJXP",
                     "source": "https://github.com/Cryolitia/PhotoTimeFix",
                     "external": true
                 },
