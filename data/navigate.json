@@ -1,10 +1,16 @@
 {
-    "version": "20230409",
+    "version": "20230425",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
             "info": "新导航试运行，点击这里反馈",
             "url": "https://github.com/qinlili23333/qinlili23333/issues",
+            "external": true
+        },
+        {
+            "icon": "/static/img/ext_icon/vbox.webp",
+            "info": "用WebDAV下载VirtualBox安装包吧！添加vboxdav.qinlili.bid到任何WebDAV客户端试试",
+            "url": "https://github.com/qinlili23333/virtualbox-download-webdav-workers",
             "external": true
         }
     ],
@@ -240,7 +246,7 @@
                 },
                 {
                     "name": "ReinePrint",
-                    "description": "专注PDF字体疑难杂症",
+                    "description": "可扩展的远程打印服务端",
                     "icon": "/static/img/ext_icon/reine.avif",
                     "iconLicensing": "https://space.bilibili.com/698029620/",
                     "url": "https://github.com/qinlili23333/ReinePrint/releases",
@@ -517,6 +523,13 @@
             "name": "其他开源项目",
             "icon": "/static/img/icon/github.svg",
             "sublist": [
+                {
+                    "name": "virtualbox-download-webdav-workers",
+                    "description": "用WebDAV来下载VirtualBox安装包吧",
+                    "icon": "/static/img/ext_icon/vbox.webp",
+                    "url": "https://github.com/qinlili23333/virtualbox-download-webdav-workers",
+                    "external": true
+                },
                 {
                     "name": "caj2pdf-actions",
                     "description": "在云端转换CAJ到PDF",
