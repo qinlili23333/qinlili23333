@@ -1,5 +1,5 @@
 {
-    "version": "20230425",
+    "version": "20230512",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -365,7 +365,7 @@
                 },
                 {
                     "name": "激战足球学园",
-                    "description": "最小仅524M",
+                    "description": "最小仅420M",
                     "icon": "/static/img/ext_icon/PSQ.webp",
                     "url": "https://glacier.qinlili.bid/VM/Detail/PSQ.html",
                     "external": true
@@ -380,6 +380,14 @@
                 {
                     "name": "优化工具和插件",
                     "divider": true
+                },
+                {
+                    "name": "FuzeCleaner",
+                    "description": "简单好用的R6S清理工具",
+                    "icon": "/static/img/ext_icon/fuze.webp",
+                    "url": "https://github.com/GlacierLab/FuzeCleaner/releases",
+                    "source": "https://github.com/GlacierLab/FuzeCleaner",
+                    "external": true
                 },
                 {
                     "name": "Demolish & Build 2017",
