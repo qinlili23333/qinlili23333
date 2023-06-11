@@ -1,5 +1,5 @@
 {
-    "version": "20230512",
+    "version": "20230610",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -382,6 +382,14 @@
                     "divider": true
                 },
                 {
+                    "name": "Song of Memories",
+                    "description": "解除分辨率限制",
+                    "icon": "/static/img/ext_icon/steam/752570.webp",
+                    "url": "https://github.com/GlacierLab/Som-resolution-fix/releases",
+                    "source": "https://github.com/GlacierLab/Som-resolution-fix",
+                    "external": true
+                },
+                {
                     "name": "FuzeCleaner",
                     "description": "简单好用的R6S清理工具",
                     "icon": "/static/img/ext_icon/fuze.webp",
@@ -429,6 +437,18 @@
                     "source": "https://github.com/GlacierLab/SuperHexagonOptimize",
                     "external": true,
                     "legacy": true
+                },
+                {
+                    "name": "页游助手",
+                    "divider": true
+                },
+                {
+                    "name": "HoukagoLite",
+                    "description": "ぼくらの放課後戦争！的WebView2客户端",
+                    "icon": "/static/img/ext_icon/houkago.webp",
+                    "url": "https://github.com/GlacierLab/HoukagoLite/releases",
+                    "source": "https://github.com/GlacierLab/HoukagoLite",
+                    "external": true
                 }
             ]
         },
