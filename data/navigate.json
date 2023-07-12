@@ -1,16 +1,10 @@
 {
-    "version": "20230610",
+    "version": "20230712",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
             "info": "新导航试运行，点击这里反馈",
             "url": "https://github.com/qinlili23333/qinlili23333/issues",
-            "external": true
-        },
-        {
-            "icon": "/static/img/ext_icon/vbox.webp",
-            "info": "用WebDAV下载VirtualBox安装包吧！添加vboxdav.qinlili.bid到任何WebDAV客户端试试",
-            "url": "https://github.com/qinlili23333/virtualbox-download-webdav-workers",
             "external": true
         }
     ],
@@ -378,8 +372,16 @@
                     "external": true
                 },
                 {
-                    "name": "优化工具和插件",
+                    "name": "工具和插件",
                     "divider": true
+                },
+                {
+                    "name": "EM: Shader Attack",
+                    "description": "生命和能量修改器",
+                    "icon": "/static/img/ext_icon/steam/527490.webp",
+                    "url": "https://github.com/GlacierLab/EMSACheater/releases",
+                    "source": "https://github.com/GlacierLab/EMSACheater",
+                    "external": true
                 },
                 {
                     "name": "Song of Memories",
@@ -435,8 +437,7 @@
                     "icon": "/static/img/ext_icon/steam/221640.webp",
                     "url": "https://github.com/GlacierLab/SuperHexagonOptimize/releases",
                     "source": "https://github.com/GlacierLab/SuperHexagonOptimize",
-                    "external": true,
-                    "legacy": true
+                    "external": true
                 },
                 {
                     "name": "页游助手",
