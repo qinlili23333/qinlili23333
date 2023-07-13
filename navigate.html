@@ -706,7 +706,7 @@
                                 const menu = document.createElement("div");
                                 menu.className = "menuItem";
                                 menu.innerHTML = `
-                                <img class="menuIcon" src="${icon}">
+                                <img class="menuIcon" src="${icon}" crossorigin="anonymous" loading="lazy">
                                 <span class="menuText">${text}</span>
                                 `;
                                 menu.onclick = click;
