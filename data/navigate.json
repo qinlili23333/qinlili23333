@@ -1,5 +1,5 @@
 {
-    "version": "20230712",
+    "version": "20231011",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -470,7 +470,7 @@
                     "name": "学习强国小帮手",
                     "description": "下载/增强/精简/去水印",
                     "icon": "/static/img/ext_icon/xxqg.webp",
-                    "url": "https://greasyfork.org/scripts/441632",
+                    "url": "https://greasyfork.org/scripts/429991",
                     "jsinstall": "https://greasyfork.org/scripts/429991/code/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD%E6%A2%A8%E9%85%B1%E5%B0%8F%E5%B8%AE%E6%89%8B.user.js",
                     "source": "https://github.com/qinlili23333/BiliRandomPlay",
                     "external": true
