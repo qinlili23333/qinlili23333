@@ -1,10 +1,16 @@
 {
-    "version": "20231011",
+    "version": "20231212",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
             "info": "新导航试运行，点击这里反馈",
             "url": "https://github.com/qinlili23333/qinlili23333/issues",
+            "external": true
+        },
+        {
+            "icon": "/static/img/ext_icon/kumo.webp",
+            "info": "了解开发中的云酱桌面端",
+            "url": "https://github.com/GlacierLab/KumoDesktop",
             "external": true
         }
     ],
@@ -83,6 +89,13 @@
                     "external": true
                 },
                 {
+                    "name": "小红书",
+                    "description": "@琴梨梨OvO",
+                    "icon": "/static/img/ext_icon/xhs.png",
+                    "url": "https://www.xiaohongshu.com/user/profile/65331827000000002a037933",
+                    "external": true
+                },
+                {
                     "name": "YouTube",
                     "description": "@qinlili233",
                     "icon": "/static/img/ext_icon/youtube.webp",
@@ -136,7 +149,8 @@
                     "backurl": "https://545.github.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/545WebPlayer",
                     "pwa": true,
-                    "external": true
+                    "external": true,
+                    "working": true
                 },
                 {
                     "name": "云酱游戏导航",
@@ -181,8 +195,7 @@
                     "icon": "/static/img/icon/compass.svg",
                     "url": "https://60.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/HowTo60",
-                    "external": true,
-                    "working": true
+                    "external": true
                 },
                 {
                     "name": "分析化学计算器",
@@ -191,7 +204,6 @@
                     "url": "https://acc.qinlili.bid/",
                     "source": "https://github.com/qinlili23333/AnalyticalChemErrorCalc",
                     "external": true,
-                    "working": true,
                     "legacy": true
                 },
                 {
