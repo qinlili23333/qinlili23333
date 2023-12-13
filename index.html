@@ -233,7 +233,16 @@
                         loading.src = "/static/img/loading.svg";
                         loading.style = "width:48px;height:48px;"
                         showDiv.appendChild(loading);
-                        fetch("/data/announce.txt?ForceNoCache=1").then(response => response.text()).then(text => showDiv.innerHTML = text).catch(err => {
+                        fetch("/data/announce.txt?ForceNoCache=1").then(response => response.text()).then(text => {
+                            showDiv.innerHTML = text;
+                            if (window.CloseWatcher) {
+                                Module.announce.closewatcher = new CloseWatcher();
+                                Module.announce.closewatcher.onclose = () => {
+                                    Module.announce.hide();
+                                };
+                            }
+                        }
+                        ).catch(err => {
                             alert("加载失败:" + err.message);
                             Module.announce.hide();
                         });
@@ -241,6 +250,7 @@
                 },
                 hide: () => {
                     document.body.removeChild(document.getElementById("announce"));
+                    Module.announce.closewatcher?.destroy();
                 }
             },
             pwa: {
