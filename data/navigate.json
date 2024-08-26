@@ -1,5 +1,5 @@
 {
-    "version": "20231212",
+    "version": "20240826",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -222,6 +222,13 @@
             "name": "Android",
             "icon": "/static/img/icon/android.svg",
             "sublist": [
+                {
+                    "name": "PDFDeSecureDroid",
+                    "description": "解密PDF",
+                    "icon": "/static/img/icon/pdf.svg",
+                    "url": "/products/android/pdfdesecure/",
+                    "source": "https://github.com/qinlili23333/PDFDeSecureDroid"
+                },
                 {
                     "name": "KiyomiPDF",
                     "description": "轻量免费纯净的PDF阅读器",
@@ -564,6 +571,12 @@
             "name": "其他开源项目",
             "icon": "/static/img/icon/github.svg",
             "sublist": [
+                {
+                    "name": "RamDiskHook",
+                    "description": "解决内存盘不支持GetVolumePathName的问题",
+                    "url": "https://github.com/qinlili23333/RamDiskHook",
+                    "external": true
+                },
                 {
                     "name": "virtualbox-download-webdav-workers",
                     "description": "用WebDAV来下载VirtualBox安装包吧",

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="PDFDeSecureDroid由Windows版本启发，由相同的PDFSharp驱动，是一款基于MAUI的PDF解除保护工具" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="canonical" href="https://qinlili.bid/products/android/pdfdesecure" />
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#bfee6f">
+    <title>PDFDeSecueDroid-纯粹的PDF解除保护工具-由琴梨梨开发</title>
+    <link rel="stylesheet" href="/static/css/public.css">
+    <link rel="stylesheet" href="/static/css/product.css">
+    <link rel="preconnect" href="https://api.github.com">
+    <style>
+        #qrcode {
+            width: 128px;
+            height: 128px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div style="display:flex;">
+            <div class="navicon" id="back" style="display:none;" aria-label="返回">
+                <img class="navicon-img" src="/static/img/icon/left.svg">
+            </div>
+            <a class="navicon" href="/" title="琴梨梨的主页">
+                <img class="navicon-img" src="/static/img/icon/home.svg">
+            </a>
+            <a class="navicon" href="https://github.com/qinlili23333/PDFDeSecureDroid" target="_blank" title="Github仓库">
+                <img class="navicon-img" src="/static/img/icon/github.svg">
+            </a>
+            <div class="navicon" id="share" style="display:none;" aria-label="分享">
+                <img class="navicon-img" src="/static/img/icon/share.svg">
+            </div>
+        </div>
+        <H3 id="status" style="line-height: 32px;text-overflow: ellipsis;flex-shrink: 0;">正在获取版本信息...</H3>
+        <div style="display:flex;">
+            <img id="loading" src="/static/img/loading.svg">
+        </div>
+    </div>
+    <div class="content">
+        <H1>PDFDesecureDroid</H1>
+        <H4>免费干净好用的PDF解除保护工具，由琴梨梨基于<a href="https://docs.pdfsharp.net/" target="_blank">PDFSharp</a>和<a
+                href="https://dotnet.microsoft.com/en-us/apps/maui" target="_blank">MAUI</a>打造</H4>
+        <H5 id="info">当前版本：---&nbsp;&nbsp;&nbsp;安装包体积：---</H5>
+        <br>
+        <br>
+        <a id="download">
+            <img src="/static/img/icon/install.svg" style="width: 32px;height: 32px;">
+            <H3 style="line-height:32px;color:black;width:100%;" id="dlText">立即安装</H3>
+        </a>
+        <br>
+        <br>
+        <div id="qrcode"></div>
+        <span id="scanText" style="display: none;">安卓设备扫码直接安装</span>
+        <br>
+        <hr>
+        <!-- KiyomiPDF -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1806614386308377"
+            data-ad-slot="2845182816" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <hr>
+        <span>
+            本页面由以下开源项目驱动:
+            <a href="https://github.com/KeeeX/qrcodejs" target="_blank">KeeeX/qrcodejs</a>
+        </span>
+        <br>
+        <span>
+            <a href="https://qinlili.bid">琴梨梨</a> |
+            <a href="https://icp.gov.moe/?keyword=20225033" target="_blank">萌ICP备20225033号</a>
+        </span>
+    </div>
+    <script src="/static/ext_js/qrcode.min.js">
+    </script>
+    <script>
+        if (document.referrer.indexOf(location.origin) == 0) {
+            document.getElementById("back").style.display = "inline";
+            document.getElementById("back").addEventListener("click", () => {
+                history.back();
+            });
+        }
+        if (navigator.share) {
+            document.getElementById("share").style.display = "inline";
+            document.getElementById("share").addEventListener("click", async () => {
+                navigator.share({
+                    title: "PDFDeSecureDroid",
+                    text: "纯粹的PDF解除保护工具-由琴梨梨开发",
+                    url: location.href
+                });
+            });
+        }
+        const sleep = delay => new Promise((resolve) => setTimeout(resolve, delay));
+        const humanFileSize = (bytes, si = false, dp = 3) => {
+            const thresh = si ? 1000 : 1024;
+
+            if (Math.abs(bytes) < thresh) {
+                return bytes + ' B';
+            };
+
+            const units = si
+                ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+                : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+            let u = -1;
+            const r = 10 ** dp;
+
+            do {
+                bytes /= thresh;
+                ++u;
+            } while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
+
+
+            return bytes.toFixed(dp) + ' ' + units[u];
+        }
+        const status = (text, loading) => {
+            document.getElementById("status").innerText = text;
+            document.getElementById("loading").style.display = loading ? "inline" : "none";
+        }
+        //读取版本信息
+        fetch("https://api.github.com/repos/qinlili23333/PDFDeSecureDroid/releases").then(b => b.json()).then(json => {
+            console.log(json);
+            let current = json[0];
+            document.getElementById("info").innerText = "当前版本：" + current.name + "   安装包体积：" + humanFileSize(current.assets[0].size);
+            document.getElementById("download").href = current.assets[0].browser_download_url;
+            document.getElementById("download").download = "PDFDeSecureDroid_LatestRelease.apk";
+            document.getElementById("download").style.display = "inline-flex";
+            status("", null);
+            //Detect Android
+            let isAndroid = false;
+            if (navigator.userAgentData && navigator.userAgentData.platform == "Android") {
+                isAndroid = true;
+            } else {
+                if (navigator.userAgent.indexOf("Android") != -1) {
+                    isAndroid = true;
+                };
+            };
+            if (!isAndroid) {
+                document.getElementById("dlText").innerText = "下载安装包";
+                new QRCode(document.getElementById("qrcode"), {
+                    text: current.assets[0].browser_download_url,
+                    width: 128,
+                    height: 128,
+                });
+                document.getElementById("scanText").style.display = "inline";
+            };
+        }).catch(err => {
+            console.log(err);
+            status("读取版本失败", null)
+        })
+        const adUnload = () => {
+            if (!window.adblock) {
+                window.adblock = true;
+                alert("Google广告被拦截！");
+            }
+        }
+        //Anti uBlock Origin
+        (async () => {
+            await sleep(2000);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.status === 200) {
+                    if (!this.responseURL.startsWith("https")) {
+                        adUnload();
+                    }
+                }
+
+            };
+            xmlhttp.open("HEAD", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", true);
+            xmlhttp.send();
+        })()
+
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1806614386308377"
+        crossorigin="anonymous" onerror="adUnload()"></script>
+</body>
+
+</html>
