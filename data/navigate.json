@@ -1,5 +1,5 @@
 {
-    "version": "20240826",
+    "version": "20241225",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -19,6 +19,13 @@
             "name": "站内导航",
             "icon": "/static/img/icon/map.svg",
             "sublist": [
+                {
+                    "name": "GlacierLab",
+                    "icon": "/static/img/icon/game.svg",
+                    "description": "关于游戏的项目都在这里",
+                    "url": "https://glacier.qinlili.bid/",
+                    "external": true
+                },
                 {
                     "name": "旧版小站",
                     "description": "仅供考古",
@@ -301,178 +308,6 @@
             ]
         },
         {
-            "name": "GlacierLab",
-            "icon": "/static/img/icon/game.svg",
-            "sublist": [
-                {
-                    "name": "网页移植",
-                    "divider": true
-                },
-                {
-                    "name": "Voices From The Sea",
-                    "description": "基于Ruffle 汉化版",
-                    "icon": "/static/img/ext_icon/voicesea.webp",
-                    "url": "https://voicesea.qinlili.bid/",
-                    "backurl": "https://185-199-110-153.dynamic-ip.hinet.net/",
-                    "source": "https://github.com/GlacierLab/ruffle-voicesea",
-                    "external": true,
-                    "pwa": true
-                },
-                {
-                    "name": "永恒之夏",
-                    "description": "目前仅支持中文",
-                    "icon": "/static/img/ext_icon/esummer.webp",
-                    "url": "https://es.qinlili.bid/",
-                    "backurl": "https://185-199-109-153.dynamic-ip.hinet.net/",
-                    "source": "https://github.com/GlacierLab/EverlastingSummerWasm",
-                    "external": true,
-                    "pwa": true
-                },
-                {
-                    "name": "原灵深海遗梦",
-                    "description": "全功能网页移植",
-                    "icon": "/static/img/ext_icon/medusa.webp",
-                    "url": "https://medusa.qinlili.bid/play",
-                    "source": "https://github.com/GlacierLab/Medusa-the-Origin",
-                    "external": true,
-                    "pwa": true
-                },
-                {
-                    "name": "枝江往事",
-                    "description": "小游戏暂不可用",
-                    "icon": "/static/img/ext_icon/zhijiang.webp",
-                    "url": "https://zhijiang.qinlili.bid/play",
-                    "source": "https://github.com/GlacierLab/ZhiJiang_Mobile",
-                    "external": true
-                },
-                {
-                    "name": "Android移植",
-                    "divider": true
-                },
-                {
-                    "name": "原灵深海遗梦",
-                    "description": "全功能Android移植",
-                    "icon": "/static/img/ext_icon/medusa.webp",
-                    "url": "https://medusa.qinlili.bid/",
-                    "source": "https://github.com/GlacierLab/Medusa-the-Origin",
-                    "external": true
-                },
-                {
-                    "name": "枝江往事",
-                    "description": "全功能Android移植",
-                    "icon": "/static/img/ext_icon/zhijiang.webp",
-                    "url": "https://zhijiang.qinlili.bid/",
-                    "source": "https://github.com/GlacierLab/ZhiJiang_Mobile",
-                    "external": true
-                },
-                {
-                    "name": "虚拟机整合包",
-                    "divider": true
-                },
-                {
-                    "name": "红楼续梦京华风云",
-                    "description": "完整原版一键启动",
-                    "icon": "/static/img/ext_icon/hlxm.webp",
-                    "url": "https://glacier.qinlili.bid/VM/Detail/HLXM.html",
-                    "external": true
-                },
-                {
-                    "name": "激战足球学园",
-                    "description": "最小仅420M",
-                    "icon": "/static/img/ext_icon/PSQ.webp",
-                    "url": "https://glacier.qinlili.bid/VM/Detail/PSQ.html",
-                    "external": true
-                },
-                {
-                    "name": "阿猫阿狗2",
-                    "description": "极速启动",
-                    "icon": "/static/img/ext_icon/TT2.webp",
-                    "url": "https://glacier.qinlili.bid/VM/Detail/TT2.html",
-                    "external": true
-                },
-                {
-                    "name": "工具和插件",
-                    "divider": true
-                },
-                {
-                    "name": "EM: Shader Attack",
-                    "description": "生命和能量修改器",
-                    "icon": "/static/img/ext_icon/steam/527490.webp",
-                    "url": "https://github.com/GlacierLab/EMSACheater/releases",
-                    "source": "https://github.com/GlacierLab/EMSACheater",
-                    "external": true
-                },
-                {
-                    "name": "Song of Memories",
-                    "description": "解除分辨率限制",
-                    "icon": "/static/img/ext_icon/steam/752570.webp",
-                    "url": "https://github.com/GlacierLab/Som-resolution-fix/releases",
-                    "source": "https://github.com/GlacierLab/Som-resolution-fix",
-                    "external": true
-                },
-                {
-                    "name": "FuzeCleaner",
-                    "description": "简单好用的R6S清理工具",
-                    "icon": "/static/img/ext_icon/fuze.webp",
-                    "url": "https://github.com/GlacierLab/FuzeCleaner/releases",
-                    "source": "https://github.com/GlacierLab/FuzeCleaner",
-                    "external": true
-                },
-                {
-                    "name": "Demolish & Build 2017",
-                    "description": "独占全屏/解锁帧率",
-                    "icon": "/static/img/ext_icon/steam/470740.webp",
-                    "url": "https://github.com/GlacierLab/DemolishBuild2017Optimize/releases",
-                    "source": "https://github.com/GlacierLab/DemolishBuild2017Optimize",
-                    "external": true
-                },
-                {
-                    "name": "Borderlands 3",
-                    "description": "DX12切换/清理着色器/优化配置",
-                    "icon": "/static/img/ext_icon/steam/397540.webp",
-                    "url": "https://github.com/GlacierLab/Borderlands3Helper/releases",
-                    "source": "https://github.com/GlacierLab/Borderlands3Helper",
-                    "external": true
-                },
-                {
-                    "name": "Apex Legends™",
-                    "description": "设置高于100的自适应帧率",
-                    "icon": "/static/img/ext_icon/steam/1172470.webp",
-                    "url": "https://github.com/GlacierLab/ApexAdaptive100Plus/releases",
-                    "source": "https://github.com/GlacierLab/ApexAdaptive100Plus",
-                    "external": true
-                },
-                {
-                    "name": "且听琴语Grobda Remix",
-                    "description": "多项细节体验优化",
-                    "icon": "/static/img/ext_icon/steam/739000.webp",
-                    "url": "https://github.com/GlacierLab/GrobdaRemixOptimize/releases",
-                    "source": "https://github.com/GlacierLab/GrobdaRemixOptimize",
-                    "external": true
-                },
-                {
-                    "name": "Super Hexagon",
-                    "description": "显著降低输入延迟",
-                    "icon": "/static/img/ext_icon/steam/221640.webp",
-                    "url": "https://github.com/GlacierLab/SuperHexagonOptimize/releases",
-                    "source": "https://github.com/GlacierLab/SuperHexagonOptimize",
-                    "external": true
-                },
-                {
-                    "name": "页游助手",
-                    "divider": true
-                },
-                {
-                    "name": "HoukagoLite",
-                    "description": "ぼくらの放課後戦争！的WebView2客户端",
-                    "icon": "/static/img/ext_icon/houkago.webp",
-                    "url": "https://github.com/GlacierLab/HoukagoLite/releases",
-                    "source": "https://github.com/GlacierLab/HoukagoLite",
-                    "external": true
-                }
-            ]
-        },
-        {
             "name": "浏览器脚本",
             "icon": "/static/img/icon/chrome.svg",
             "sublist": [
@@ -545,7 +380,8 @@
                     "url": "https://greasyfork.org/zh-CN/scripts/440564",
                     "jsinstall": "https://greasyfork.org/scripts/440564/code/%E4%BA%BA%E5%8D%AB%E6%85%95%E8%AF%BE%E6%92%AD%E6%94%BE%E5%8A%A9%E6%89%8B.user.js",
                     "source": "https://gist.github.com/qinlili23333/ab2ea32e38fe3d390b7d053d53379e8e",
-                    "external": true
+                    "external": true,
+                    "legacy": true
                 },
                 {
                     "name": "人卫慕课瞎几把蒙",
@@ -553,7 +389,8 @@
                     "icon": "/static/img/ext_icon/pmph.webp",
                     "url": "https://greasyfork.org/zh-CN/scripts/441899",
                     "jsinstall": "https://greasyfork.org/scripts/441899/code/%E4%BA%BA%E5%8D%AB%E6%85%95%E8%AF%BE%E7%9E%8E%E5%87%A0%E6%8A%8A%E8%92%99.user.js",
-                    "external": true
+                    "external": true,
+                    "legacy": true
                 },
                 {
                     "name": "雨课堂超级复制增强版",
@@ -595,7 +432,8 @@
                     "name": "Ephedrine",
                     "description": "基于WebView2的安装器",
                     "url": "https://github.com/qinlili23333/Ephedrine",
-                    "external": true
+                    "external": true,
+                    "legacy": true
                 },
                 {
                     "name": "ctfile.Workers",
@@ -621,13 +459,15 @@
                     "name": "SakiProgress",
                     "description": "简单无依赖的网页悬浮进度条",
                     "url": "https://github.com/qinlili23333/SakiProgress",
-                    "external": true
+                    "external": true,
+                    "legacy": true
                 },
                 {
                     "name": "WebXHRDL",
                     "description": "网页内的基于XHR的下载器",
                     "url": "https://github.com/qinlili23333/WebXHRDL",
-                    "external": true
+                    "external": true,
+                    "legacy": true
                 },
                 {
                     "name": "OnlineInstaller",
