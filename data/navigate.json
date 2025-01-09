@@ -1,5 +1,5 @@
 {
-    "version": "20241225",
+    "version": "20250109",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
@@ -19,6 +19,12 @@
             "name": "站内导航",
             "icon": "/static/img/icon/map.svg",
             "sublist": [
+                {
+                    "name": "隐私协议",
+                    "icon": "/static/img/icon/privacy.svg",
+                    "description": "详细了解数据收集和处理情况",
+                    "url": "/privacy/"
+                },
                 {
                     "name": "GlacierLab",
                     "icon": "/static/img/icon/game.svg",
