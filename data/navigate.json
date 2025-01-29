@@ -1,16 +1,10 @@
 {
-    "version": "20250109",
+    "version": "20250129",
     "top": [
         {
             "icon": "/static/img/icon/bug.svg",
-            "info": "新导航试运行，点击这里反馈",
+            "info": "点击这里反馈",
             "url": "https://github.com/qinlili23333/qinlili23333/issues",
-            "external": true
-        },
-        {
-            "icon": "/static/img/ext_icon/kumo.webp",
-            "info": "了解开发中的云酱桌面端",
-            "url": "https://github.com/GlacierLab/KumoDesktop",
             "external": true
         }
     ],
@@ -37,6 +31,33 @@
                     "description": "仅供考古",
                     "icon": "/static/img/icon/history.svg",
                     "url": "https://legacy.qinlili.bid/",
+                    "external": true
+                }
+            ]
+        },
+        {
+            "name": "赞助支持",
+            "icon": "/static/img/icon/wallet.svg",
+            "sublist": [
+                {
+                    "name": "爱发电",
+                    "description": "@琴梨梨",
+                    "icon": "/static/img/ext_icon/afdian.webp",
+                    "url": "https://afdian.net/a/qinliliAPP",
+                    "external": true
+                },
+                {
+                    "name": "Github Sponsor",
+                    "description": "@qinlili23333",
+                    "icon": "/static/img/ext_icon/github.webp",
+                    "url": "https://github.com/sponsors/qinlili23333",
+                    "external": true
+                },
+                {
+                    "name": "Buy Me a Coffee",
+                    "description": "@qinlili",
+                    "icon": "/static/img/ext_icon/buymeacoffee.svg",
+                    "url": "https://buymeacoffee.com/qinlili",
                     "external": true
                 }
             ]
@@ -92,13 +113,6 @@
                     "description": "@qinlili23333",
                     "icon": "/static/img/ext_icon/github.webp",
                     "url": "https://github.com/qinlili23333",
-                    "external": true
-                },
-                {
-                    "name": "爱发电",
-                    "description": "@琴梨梨",
-                    "icon": "/static/img/ext_icon/afdian.webp",
-                    "url": "https://afdian.net/a/qinliliAPP",
                     "external": true
                 },
                 {
