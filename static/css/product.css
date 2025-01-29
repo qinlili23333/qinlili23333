@@ -47,6 +47,7 @@ body {
     padding: 4px;
 }
 
+.download,
 #download {
     display: none;
     height: 48px;
