@@ -1,7 +1,7 @@
 # 琴梨梨OvO
 ### [个人小站](https://qinlili.bid) | [旧版小站考古](https://legacy.qinlili.bid)  
 
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=qinlili23333&show_icons=true&include_all_commits=true&theme=graywhite&hide_border=true" alt="Anurag's github stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=qinlili23333&layout=compact&theme=graywhite&hide_border=true" /> |
+| <img align="center" src="https://github-readme-stats.vercel.app/api?username=qinlili23333&show_icons=true&include_all_commits=true&theme=graywhite&number_format=long&rank_icon=percentile&hide_border=true" alt="Anurag's github stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=qinlili23333&layout=compact&theme=graywhite&hide_border=true" /> |
 | ------------- | ------------- |
 
 我创建的所有开源项目永远欢迎俄罗斯开发者参与贡献，无论国籍和立场，只要对项目有价值，我都欢迎。  
