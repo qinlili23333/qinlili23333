@@ -116,13 +116,6 @@
                     "external": true
                 },
                 {
-                    "name": "小红书",
-                    "description": "@琴梨梨OvO",
-                    "icon": "/static/img/ext_icon/xhs.png",
-                    "url": "https://www.xiaohongshu.com/user/profile/65331827000000002a037933",
-                    "external": true
-                },
-                {
                     "name": "YouTube",
                     "description": "@qinlili233",
                     "icon": "/static/img/ext_icon/youtube.webp",
